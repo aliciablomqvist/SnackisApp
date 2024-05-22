@@ -1,0 +1,27 @@
+@page "{postId:int}"
+@model CreateCommentModel
+@{
+    ViewData["Title"] = "Add Comment";
+}
+
+<h2>Add a Comment</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="NewComment.PostId" />
+    <label asp-for="NewComment.Content"></label>
+    <textarea asp-for="NewComment.Content" cols="40" rows="5"></textarea>
+    <br />
+    <input type="submit" class="btn btn-success" value="Add Comment" />
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <li>@error.ErrorMessage</li>
+        }
+        </ul>
+    </div>
+}

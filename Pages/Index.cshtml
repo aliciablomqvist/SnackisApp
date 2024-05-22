@@ -1,0 +1,71 @@
+﻿@page
+@using SnackisApp;
+@using SnackisApp.Models;
+
+@inject SignInManager<IdentityUser> SignInManager
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+</head>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="StartDiv">
+        <h2>Welcome to Mindful Movement!</h2>
+        <p>
+            Mindful Movement is a serene space for enthusiasts of yoga, body wellness, meditation, mindfulness, and holistic living.
+            Customize your profile to reflect your journey by clicking on your <a asp-page="/UserHome">username</a> in the navigation bar and exploring the settings.
+        </p>
+        <p>
+            Navigate our forum by choosing a category from the menu above. Our categories include:
+
+<ul>
+    <li><a asp-page="/Category" asp-route-category="Yoga">Yoga</a></li>
+    <li><a asp-page="/Category" asp-route-category="Meditation">Meditation</a></li>
+    <li><a asp-page="/Category" asp-route-category="Mindfulness">Mindfulness</a></li>
+    <li><a asp-page="/Category" asp-route-category="Livsstil">Livsstil</a></li>
+    <li><a asp-page="/Category" asp-route-category="Community">Community</a></li>
+</ul>
+
+        </p>
+        <p>
+            Engage with the community by reading, voting, and replying to posts, or create your own to share your insights and questions!
+        </p>
+        <p>
+            You can also connect with other members through private messages to share experiences, seek advice, or simply make new friends.
+            Please remember to protect your personal information and avoid sharing sensitive details such as your full name, credit card information, phone number, or address.
+        </p>
+        <p>
+            Now you are all set to dive into the world of mindfulness with Mindful Movement!
+            Remember, the journey is as important as the destination. Enjoy and be present!
+        </p>
+    </div>
+}
+else
+{
+    <div class="StartDiv">
+        <h2>You are not logged in!</h2>
+        <p>
+            Log in to your account to access Mindful Movement. Click the log in button in the menu!
+        </p>
+        <p>
+            If you do not have an account, register by clicking the register button in the menu and join our mindful community!
+        </p>
+
+        <p>
+            Navigate our forum by choosing a category from the menu above. Our categories include:
+
+<ul>
+    <li><a asp-page="/Category" asp-route-category="Yoga">Yoga</a></li>
+    <li><a asp-page="/Category" asp-route-category="Meditation">Meditation</a></li>
+    <li><a asp-page="/Category" asp-route-category="Mindfulness">Mindfulness</a></li>
+    <li><a asp-page="/Category" asp-route-category="Livsstil">Livsstil</a></li>
+    <li><a asp-page="/Category" asp-route-category="Community">Community</a></li>
+</ul>
+        </p>
+    </div>
+
+}

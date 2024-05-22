@@ -1,0 +1,43 @@
+@page "/SubCategory/{id:int}"
+@using SnackisApp.Models
+@model SnackisApp.Pages.SubCategoryModel
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = Model.SubCategory.Name;
+    var user = await UserManager.GetUserAsync(User);
+}
+<h2>@Model.SubCategory.Name</h2>
+
+<div class="row">
+    @if(Model.Posts != null)
+    {
+        @foreach(var post in Model.Posts)
+        {
+           <div class="card m-2" style="width: 18rem">
+               <img class="card-img-top" src="~/userImages/@post.Image" />
+               <div class="card-body">
+                   <h5 class="card-title">@post.Title</h5>
+                   <p class="card-text">@post.Content</p>
+                   @if(user != null && user.Id == post.UserId)
+                    {
+                        <a asp-route-deleteId="@post.Id" class="btn btn-primary">Ta bort</a>
+                    }
+                </div>
+               <p class="card-footer">@post.Date @User.Identity.Name</p>
+
+           </div>
+
+        }
+    }
+</div>
+@if(SignInManager.IsSignedIn(User))
+{
+    <p>User: @User.Identity.Name</p>
+// Gör en specifkt för subcategpry
+   <li><a asp-page="/CreatePost" asp-route-category="CreatePost">Create Post in this subcategory</a></li>
+}
+else
+{
+    <div class="alert alert-danger">To write your own posts, you need to be logged in.</div>
+}

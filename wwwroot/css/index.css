@@ -1,0 +1,28 @@
+.StartDiv {
+    width: 500px;
+    max-width: 200%; /* Se till att det inte överstiger förälderns bredd */
+    padding: 30px;
+    background-color: rgba(183, 157, 204, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto; /* Centrerar div:en horisontellt */
+}
+
+
+h2 {
+    color: #70527c; /* Bibehållen färg från din ursprungliga stil */
+    font-family: 'Open Sans', sans-serif; /* En ren och lättläst typsnitt */
+    font-weight: 300; /* Gör texten lättare för en mer luftig känsla */
+    text-align: center; /* Centrerar rubriken */
+}
+
+/* Stil för ytterligare element som kan finnas i .StartDiv */
+p {
+    color: #564357; /* En mörkare ton för kontrast */
+    font-size: 16px;
+    line-height: 1.6; /* Ökar radavståndet för bättre läsbarhet */
+}

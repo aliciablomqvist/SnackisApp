@@ -1,0 +1,14 @@
+@page "/Category/{id:int}"
+@model SnackisApp.Pages.CategoryModel
+@{
+    ViewData["Title"] = Model.Category.Name;
+}
+
+<h2>@Model.Category.Name</h2>
+
+<ul>
+    @foreach (var subCategory in Model.SubCategories)
+    {
+        <li><a href="/SubCategory/@subCategory.Id">@subCategory.Name</a></li>
+    }
+</ul>

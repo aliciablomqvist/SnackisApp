@@ -1,0 +1,54 @@
+@page
+@model CreatePostModel
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Create Post";
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mindful Movement</h1>
+     <h2 class="display-4">Create Post</h2>
+</div>
+
+<div class="row">
+
+@if(SignInManager.IsSignedIn(User))
+{
+    <p>User: @User.Identity.Name</p>
+    <form method="post" enctype="multipart/form-data">
+        <label asp-for="Post.Title"></label>
+        <input asp-for="Post.Title" />
+        <br />
+        <label asp-for="Post.Content"></label>
+        <textarea asp-for="Post.Content" cols="40" rows="5"></textarea>
+        <br />
+        <label asp-for="Post.CategoryId"></label>
+        <select asp-for="Post.CategoryId" asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["Categories"], "Value", "Text"))"></select>
+        <br />
+        <label asp-for="Post.SubCategoryId"></label>
+        <select asp-for="Post.SubCategoryId" asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["SubCategories"], "Value", "Text"))"></select>
+        <br />
+        <label asp-for="UploadedImage"></label>
+        <input type="file" asp-for="UploadedImage" />
+        <br />
+        <input type="submit" class="btn btn-success" value="Save post" />
+    </form>
+}
+else
+{
+    <div class="alert alert-danger">To write your own posts, you need to be logged in.</div>
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <li>@error.ErrorMessage</li>
+        }
+        </ul>
+    </div>
+}
+</div>

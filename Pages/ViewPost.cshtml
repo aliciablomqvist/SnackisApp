@@ -17,10 +17,7 @@
     <ul>
     @foreach (var comment in Model.Comments)
     {
-        <li>
-            <p>@comment.Content</p>
-            <small>@comment.Date</small>
-        </li>
+        @Html.Partial("_CommentPartial", comment)
     }
     </ul>
 }
@@ -31,8 +28,8 @@ else
 
 <h3>Add a Comment</h3>
 <form method="post">
-    <input type="hidden" asp-for="NewComment.PostId" value="@Model.Post.Id" />
-    <textarea asp-for="NewComment.Content" cols="40" rows="5"></textarea>
+    <input type="hidden" name="ParentCommentId" value="" />
+    <textarea name="NewCommentContent" cols="40" rows="5"></textarea>
     <input type="submit" class="btn btn-success" value="Add Comment" />
 </form>
 
@@ -46,4 +43,17 @@ else
         }
         </ul>
     </div>
+}
+
+@section Scripts {
+    <script>
+        function toggleReplyForm(commentId) {
+            var form = document.getElementById('reply-form-' + commentId);
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
 }

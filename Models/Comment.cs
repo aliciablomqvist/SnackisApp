@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SnackisApp.Models
 {
     public class Comment
@@ -18,5 +20,12 @@ namespace SnackisApp.Models
 
         [Required]
         public DateTime Date { get; set; }
+
+
+        //Replies
+        public int? ParentCommentId { get; set; }
+
+        public Comment ParentComment { get; set; }
+        public ICollection<Comment> Replies { get; set; }
     }
 }

@@ -246,6 +246,7 @@
 /Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/SnackisApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/SnackisApp.RazorAssemblyInfo.cache
 /Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/SnackisApp.RazorAssemblyInfo.cs
+/Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/SnackisApp.sourcelink.json
 /Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/staticwebassets.build.json
 /Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/staticwebassets.development.json
 /Users/jack.blomqvist/SnackisApp/obj/Debug/net8.0/staticwebassets/msbuild.SnackisApp.Microsoft.AspNetCore.StaticWebAssets.props

@@ -1,0 +1,23 @@
+@model SnackisApp.Models.Comment
+
+<li>
+    <p>@Model.Content</p>
+    <small>@Model.Date</small>
+    <button class="btn btn-link" onclick="toggleReplyForm(@Model.Id)">Reply</button>
+    @if (Model.Replies != null && Model.Replies.Count > 0)
+    {
+        <ul>
+        @foreach (var reply in Model.Replies)
+        {
+            @Html.Partial("_CommentPartial", reply)
+        }
+        </ul>
+    }
+    <div id="reply-form-@Model.Id" style="display:none;">
+        <form method="post">
+            <input type="hidden" name="ParentCommentId" value="@Model.Id" />
+            <textarea name="NewCommentContent" cols="40" rows="5"></textarea>
+            <input type="submit" class="btn btn-success" value="Add Reply" />
+        </form>
+    </div>
+</li>

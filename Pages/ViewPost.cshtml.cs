@@ -25,6 +25,12 @@ namespace SnackisApp.Pages
         [BindProperty]
         public Comment NewComment { get; set; }
 
+        [BindProperty]
+        public int? ParentCommentId { get; set; }
+
+        [BindProperty]
+        public string NewCommentContent { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int id)
         {
             Post = await _context.Post.FirstOrDefaultAsync(p => p.Id == id);
@@ -33,7 +39,10 @@ namespace SnackisApp.Pages
                 return NotFound();
             }
 
-            Comments = await _context.Comment.Where(c => c.PostId == id).ToListAsync();
+            Comments = await _context.Comment
+                .Include(c => c.Replies)
+                .Where(c => c.PostId == id && c.ParentCommentId == null)
+                .ToListAsync();
 
             return Page();
         }
@@ -46,16 +55,28 @@ namespace SnackisApp.Pages
                 return NotFound();
             }
 
-            NewComment.PostId = Post.Id;
-            NewComment.Date = DateTime.Now;
+            if (string.IsNullOrEmpty(NewCommentContent))
+            {
+                ModelState.AddModelError("NewCommentContent", "Content is required.");
+            }
 
-            // Remove the Post property from the ModelState before validating the model
-            ModelState.Remove("NewComment.Post");
+            // Remove navigational properties from ModelState
+            ModelState.Clear();
+
+            NewComment = new Comment
+            {
+                PostId = Post.Id,
+                ParentCommentId = ParentCommentId,
+                Content = NewCommentContent,
+                Date = DateTime.Now
+            };
 
             if (!ModelState.IsValid)
             {
-                Comments = await _context.Comment.Where(c => c.PostId == id).ToListAsync();
-                Console.WriteLine($"ModelState is invalid. Errors: {string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage))}");
+                Comments = await _context.Comment
+                    .Include(c => c.Replies)
+                    .Where(c => c.PostId == id && c.ParentCommentId == null)
+                    .ToListAsync();
                 return Page();
             }
 

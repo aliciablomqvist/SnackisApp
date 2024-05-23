@@ -29,5 +29,11 @@ public class ApplicationDbContext : IdentityDbContext
             .HasMany(sc => sc.Post)
             .WithOne(p => p.SubCategory)
             .HasForeignKey(p => p.SubCategoryId);
+          
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.ParentComment)
+                .WithMany(c => c.Replies)
+                .HasForeignKey(c => c.ParentCommentId);
+        
     }
 }

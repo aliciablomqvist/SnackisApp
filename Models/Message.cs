@@ -9,11 +9,11 @@ namespace SnackisApp.Models
 
         [Required]
         public string SenderId { get; set; }
-        public IdentityUser Sender { get; set; }
+        public SnackisUser Sender { get; set; }
 
         [Required]
         public string RecipientId { get; set; }
-        public IdentityUser Recipient { get; set; }
+        public SnackisUser Recipient { get; set; }
 
         [Required]
         [StringLength(500, ErrorMessage = "Message cannot be longer than 500 characters.")]

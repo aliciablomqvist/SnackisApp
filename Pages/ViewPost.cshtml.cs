@@ -10,9 +10,9 @@ namespace SnackisApp.Pages
     public class ViewPostModel : PageModel
     {
        private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<SnackisUser> _userManager;
 
-        public ViewPostModel(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ViewPostModel(ApplicationDbContext context, UserManager<SnackisUser> userManager)
         {
             _context = context;
             _userManager = userManager;

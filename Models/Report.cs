@@ -14,7 +14,7 @@ namespace SnackisApp.Models
 
         [Required]
         public string ReportedById { get; set; }
-        public IdentityUser ReportedBy { get; set; }
+        public SnackisUser ReportedBy { get; set; }
 
         [Required]
         public DateTime ReportDate { get; set; }

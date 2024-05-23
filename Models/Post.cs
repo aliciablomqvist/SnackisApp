@@ -1,4 +1,7 @@
-﻿namespace SnackisApp.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SnackisApp.Models
 {
 public class Post
 {
@@ -8,9 +11,18 @@ public class Post
     public string Image { get; set; }
     public DateTime Date { get; set; }
     public string UserId { get; set; }
-    public int? CategoryId { get; set; } // Nullable int
-    public Category Category { get; set; }
-    public int? SubCategoryId { get; set; } // Nullable int
-    public SubCategory SubCategory { get; set; }
+
+        [ForeignKey("UserId")]
+        public SnackisUser User { get; set; }
+
+        public int? CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+
+        public int? SubCategoryId { get; set; }
+
+        [ForeignKey("SubCategoryId")]
+        public SubCategory SubCategory { get; set; }
 }
 }

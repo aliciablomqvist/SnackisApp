@@ -265,8 +265,16 @@
       "PackagePath": "staticwebassets/userImages/43536download.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/60767download.jpg",
+      "PackagePath": "staticwebassets/userImages/60767download.jpg"
+    },
+    {
       "Id": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/65460download.jpg",
       "PackagePath": "staticwebassets/userImages/65460download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/93174download.jpg",
+      "PackagePath": "staticwebassets/userImages/93174download.jpg"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SnackisApp.Microsoft.AspNetCore.StaticWebAssets.props",

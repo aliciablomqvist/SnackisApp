@@ -1,7 +1,8 @@
 @page
 @model CreatePostModel
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using SnackisApp.Models
+@inject SignInManager<SnackisUser> SignInManager
+@inject UserManager<SnackisUser> UserManager
 @{
     ViewData["Title"] = "Create Post";
     var user = await UserManager.GetUserAsync(User);

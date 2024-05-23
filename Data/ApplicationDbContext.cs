@@ -5,7 +5,7 @@ using SnackisApp.Models;
 
 namespace SnackisApp.Data;
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext<SnackisUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
@@ -67,5 +67,13 @@ public class ApplicationDbContext : IdentityDbContext
                     modelBuilder.Entity<Report>()
         .Property(r => r.Status)
         .HasDefaultValue(ReportStatus.Pending);
+
+
+     modelBuilder.Entity<Post>()
+                .HasOne(p => p.User)
+                .WithMany()
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
     }
 }

@@ -1,8 +1,9 @@
 ﻿@page
 @using SnackisApp;
 @using SnackisApp.Models;
-
-@inject SignInManager<IdentityUser> SignInManager
+@using SnackisApp.Models
+@inject SignInManager<SnackisUser> SignInManager
+@inject UserManager<SnackisUser> UserManager
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";

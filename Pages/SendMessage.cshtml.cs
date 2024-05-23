@@ -13,9 +13,9 @@ namespace SnackisApp.Pages
     public class SendMessageModel : PageModel
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<SnackisUser> _userManager;
 
-        public SendMessageModel(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public SendMessageModel(ApplicationDbContext context, UserManager<SnackisUser> userManager)
         {
             _context = context;
             _userManager = userManager;

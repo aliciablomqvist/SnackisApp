@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lx0/OcTXLRYpuoTlWCWmNjT/lK8/HbgEOI0YDHIv9us=",
+  "Hash": "4gaz2urL0CgtG5aeY7aBvbFHWO8++AaPMbhm32DpgzE=",
   "Source": "SnackisApp",
   "BasePath": "_content/SnackisApp",
   "Mode": "Default",
@@ -2430,6 +2430,25 @@
       "OriginalItemSpec": "wwwroot/userImages/43536download.jpg"
     },
     {
+      "Identity": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/60767download.jpg",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "userImages/60767download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/userImages/60767download.jpg"
+    },
+    {
       "Identity": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/65460download.jpg",
       "SourceId": "SnackisApp",
       "SourceType": "Discovered",
@@ -2447,6 +2466,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/userImages/65460download.jpg"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/93174download.jpg",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "userImages/93174download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/userImages/93174download.jpg"
     }
   ]
 }

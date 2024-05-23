@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bAkUlhb4nE7xS4QOwG1WioNKz3KNZmERcCKMgezOYoI=",
+  "Hash": "Lx0/OcTXLRYpuoTlWCWmNjT/lK8/HbgEOI0YDHIv9us=",
   "Source": "SnackisApp",
   "BasePath": "_content/SnackisApp",
   "Mode": "Default",
@@ -2390,6 +2390,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/userImages/21227download.jpg"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/23830download.jpg",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "userImages/23830download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/userImages/23830download.jpg"
     },
     {
       "Identity": "/Users/jack.blomqvist/SnackisApp/wwwroot/userImages/43536download.jpg",

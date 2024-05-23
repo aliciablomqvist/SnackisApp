@@ -57,3 +57,22 @@ else
         }
     </script>
 }
+
+
+<form method="post" asp-page-handler="Report">
+    <input type="hidden" name="postId" value="@Model.Post.Id" />
+    <input type="hidden" name="reportedById" value="@User.Identity.Name" />
+    <input type="submit" class="btn btn-danger" value="Report Post" />
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <li>@error.ErrorMessage</li>
+        }
+        </ul>
+    </div>
+}

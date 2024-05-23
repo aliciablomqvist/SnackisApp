@@ -3,20 +3,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SnackisApp.Data;
 using SnackisApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace SnackisApp.Pages
 {
     public class ViewPostModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+       private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ViewPostModel(ApplicationDbContext context)
+        public ViewPostModel(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public Post Post { get; set; }
@@ -84,6 +83,34 @@ namespace SnackisApp.Pages
             await _context.SaveChangesAsync();
 
             return RedirectToPage(new { id = id });
+        }
+public async Task<IActionResult> OnPostReportAsync(int postId, string reportedById)
+        {
+            var post = await _context.Post.FindAsync(postId);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _userManager.FindByNameAsync(reportedById);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid user.");
+                return Page();
+            }
+
+            var report = new Report
+            {
+                PostId = postId,
+                ReportedById = user.Id,
+                ReportDate = DateTime.Now,
+                Reason = "Inappropriate content"
+            };
+
+            _context.Reports.Add(report);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage(new { id = postId });
         }
     }
 }

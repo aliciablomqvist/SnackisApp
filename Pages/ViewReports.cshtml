@@ -1,0 +1,55 @@
+@page
+@model ViewReportsModel
+@{
+    ViewData["Title"] = "View Reports";
+}
+
+<h2>View Reports</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Post ID</th>
+            <th>Reported By</th>
+            <th>Report Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model.Reports != null)
+    {
+        @foreach (var report in Model.Reports)
+        {
+            <tr>
+                <td>@report.PostId</td>
+                <td>@report.ReportedBy?.UserName ?? "Unknown"</td>
+                <td>@report.ReportDate</td>
+                <td>@report.Reason</td>
+                <td>@report.Status</td>
+                <td>
+                    @if (report.Status == SnackisApp.Models.ReportStatus.Pending)
+                    {
+                        <form method="post" asp-page-handler="Approve" asp-route-id="@report.Id" style="display:inline;">
+                            <button type="submit" class="btn btn-success">Approve</button>
+                        </form>
+                        <form method="post" asp-page-handler="Reject" asp-route-id="@report.Id" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Reject</button>
+                        </form>
+                        <form method="post" asp-page-handler="DeletePost" asp-route-postId="@report.PostId" style="display:inline;">
+                            <button type="submit" class="btn btn-warning">Approve and Delete Post</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="6">No reports found.</td>
+        </tr>
+    }
+    </tbody>
+</table>

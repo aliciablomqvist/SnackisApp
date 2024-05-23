@@ -17,7 +17,7 @@
            <div class="card m-2" style="width: 18rem">
                <img class="card-img-top" src="~/userImages/@post.Image" />
                <div class="card-body">
-                   <h5 class="card-title">@post.Title</h5>
+                   <h5 class="card-title"> <a asp-page="/ViewPost" asp-route-id="@post.Id">@post.Title</a></h5>
                    <p class="card-text">@post.Content</p>
                    @if(user != null && user.Id == post.UserId)
                     {

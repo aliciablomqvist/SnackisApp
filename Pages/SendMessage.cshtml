@@ -1,0 +1,33 @@
+@page
+@model SendMessageModel
+@{
+    ViewData["Title"] = "Send Message";
+}
+
+<h2>Send a Message</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="RecipientId">Recipient</label>
+        <select asp-for="RecipientId" class="form-control" asp-items="Model.Users">
+            <option value="">Select a user</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Message.Content"></label>
+        <textarea asp-for="Message.Content" class="form-control" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}

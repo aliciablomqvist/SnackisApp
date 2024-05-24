@@ -1,15 +1,19 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SnackisApp.Data;
 using SnackisApp.Models;
-using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SnackisApp.Pages
 {
     public class ViewPostModel : PageModel
     {
-       private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<SnackisUser> _userManager;
 
         public ViewPostModel(ApplicationDbContext context, UserManager<SnackisUser> userManager)
@@ -20,19 +24,20 @@ namespace SnackisApp.Pages
 
         public Post Post { get; set; }
         public List<Comment> Comments { get; set; }
-
         [BindProperty]
         public Comment NewComment { get; set; }
-
         [BindProperty]
         public int? ParentCommentId { get; set; }
-
         [BindProperty]
         public string NewCommentContent { get; set; }
+        public string UserName { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            Post = await _context.Post.FirstOrDefaultAsync(p => p.Id == id);
+            Post = await _context.Post
+                .Include(p => p.User) // Include user to get the username and profile image
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (Post == null)
             {
                 return NotFound();
@@ -42,6 +47,8 @@ namespace SnackisApp.Pages
                 .Include(c => c.Replies)
                 .Where(c => c.PostId == id && c.ParentCommentId == null)
                 .ToListAsync();
+
+            UserName = Post.User.UserName;
 
             return Page();
         }
@@ -84,7 +91,8 @@ namespace SnackisApp.Pages
 
             return RedirectToPage(new { id = id });
         }
-public async Task<IActionResult> OnPostReportAsync(int postId, string reportedById)
+
+        public async Task<IActionResult> OnPostReportAsync(int postId, string reportedById)
         {
             var post = await _context.Post.FindAsync(postId);
             if (post == null)

@@ -13,85 +13,83 @@ using System;
 namespace SnackisApp.Pages
 {
     public class SubCategoryModel : PageModel
-    {
-        private readonly ApplicationDbContext _context;
+{
+    private readonly ApplicationDbContext _context;
 
-        public SubCategoryModel(ApplicationDbContext context)
+    public SubCategoryModel(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    public SubCategory SubCategory { get; set; }
+    [BindProperty]
+    public Models.Post Post { get; set; }
+    [BindProperty]
+    public IFormFile UploadedImage { get; set; }
+    public List<Models.Post> Posts { get; set; }
+
+    public async Task<IActionResult> OnGetAsync(int id, int? deleteId)
+    {
+        SubCategory = await _context.SubCategory
+            .Include(sc => sc.Category)
+            .FirstOrDefaultAsync(sc => sc.Id == id);
+
+        if (SubCategory == null)
         {
-            _context = context;
+            return NotFound();
         }
 
-        public SubCategory SubCategory { get; set; }
-
-        [BindProperty]
-        public Models.Post Post { get; set; }
-
-        [BindProperty]
-        public IFormFile UploadedImage { get; set; }
-
-        public List<Models.Post> Posts { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(int id, int? deleteId)
+        if (deleteId.HasValue)
         {
-            SubCategory = await _context.SubCategory
-                .Include(sc => sc.Category)
-                .FirstOrDefaultAsync(sc => sc.Id == id);
+            var postToBeDeleted = await _context.Post.FindAsync(deleteId.Value);
 
-            if (SubCategory == null)
+            if (postToBeDeleted != null)
             {
-                return NotFound();
-            }
-
-            if (deleteId.HasValue)
-            {
-                var postToBeDeleted = await _context.Post.FindAsync(deleteId.Value);
-
-                if (postToBeDeleted != null)
+                if (System.IO.File.Exists("./wwwroot/userImages/" + postToBeDeleted.Image))
                 {
-                    if (System.IO.File.Exists("./wwwroot/userImages/" + postToBeDeleted.Image))
-                    {
-                        System.IO.File.Delete("./wwwroot/userImages/" + postToBeDeleted.Image);
-                    }
-                    _context.Post.Remove(postToBeDeleted);
-                    await _context.SaveChangesAsync();
+                    System.IO.File.Delete("./wwwroot/userImages/" + postToBeDeleted.Image);
                 }
+                _context.Post.Remove(postToBeDeleted);
+                await _context.SaveChangesAsync();
             }
+        }
 
-            Posts = await _context.Post
-                .Where(p => p.SubCategoryId == id)
-                .ToListAsync();
+        Posts = await _context.Post
+            .Include(p => p.User) // Include user to get the profile image URL
+            .Where(p => p.SubCategoryId == id)
+            .ToListAsync();
 
+        return Page();
+    }
+
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid)
+        {
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        string fileName = "";
+        if (UploadedImage != null)
         {
-            if (!ModelState.IsValid)
+            Random rnd = new();
+            fileName = rnd.Next(0, 100000).ToString() + Path.GetExtension(UploadedImage.FileName);
+
+            var filePath = Path.Combine("./wwwroot/userImages/", fileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                return Page();
+                await UploadedImage.CopyToAsync(fileStream);
             }
-
-            string fileName = "";
-            if (UploadedImage != null)
-            {
-                Random rnd = new();
-                fileName = rnd.Next(0, 100000).ToString() + Path.GetExtension(UploadedImage.FileName);
-
-                var filePath = Path.Combine("./wwwroot/userImages/", fileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await UploadedImage.CopyToAsync(fileStream);
-                }
-            }
-
-            Post.Date = DateTime.Now;
-            Post.Image = fileName;
-            Post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            _context.Post.Add(Post);
-
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
         }
+
+        Post.Date = DateTime.Now;
+        Post.Image = fileName;
+        Post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        _context.Post.Add(Post);
+
+        await _context.SaveChangesAsync();
+
+        return RedirectToPage("./Index");
     }
+}
 }

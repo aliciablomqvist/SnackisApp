@@ -12,11 +12,14 @@
         <select asp-for="RecipientId" class="form-control" asp-items="Model.Users">
             <option value="">Select a user</option>
         </select>
+        <span asp-validation-for="RecipientId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Message.Content"></label>
         <textarea asp-for="Message.Content" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Message.Content" class="text-danger"></span>
     </div>
+    <input type="hidden" asp-for="Message.SenderId" />
     <button type="submit" class="btn btn-primary">Send</button>
 </form>
 

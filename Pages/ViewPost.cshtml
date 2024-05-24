@@ -5,6 +5,14 @@
 }
 
 <h2>@Model.Post.Title</h2>
+
+@if (!string.IsNullOrEmpty(Model.Post.User.ProfileImageUrl))
+{
+    <img class="card-img-top" src="@Model.Post.User.ProfileImageUrl" alt="Profile image" style="width:50px;height:50px;" />
+}
+
+<p><strong>Posted by:</strong> @Model.UserName</p>
+
 <p>@Model.Post.Content</p>
 @if (!string.IsNullOrEmpty(Model.Post.Image))
 {
@@ -58,10 +66,9 @@ else
     </script>
 }
 
-
 <form method="post" asp-page-handler="Report">
     <input type="hidden" name="postId" value="@Model.Post.Id" />
-    <input type="hidden" name="reportedById" value="@User.Identity.Name" />
+    <input type="hidden" name="reportedById" value="@User.Identity?.Name" />
     <input type="submit" class="btn btn-danger" value="Report Post" />
 </form>
 

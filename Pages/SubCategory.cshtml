@@ -18,25 +18,28 @@
            <div class="card m-2" style="width: 18rem">
                <img class="card-img-top" src="~/userImages/@post.Image" />
                <div class="card-body">
-                   <h5 class="card-title"> <a asp-page="/ViewPost" asp-route-id="@post.Id">@post.Title</a></h5>
+                   <h5 class="card-title">
+                       <a asp-page="/ViewPost" asp-route-id="@post.Id">@post.Title</a>
+                   </h5>
+                   @if (!string.IsNullOrEmpty(post.User?.ProfileImageUrl))
+                   {
+                       <img class="card-img-top" src="@post.User.ProfileImageUrl" alt="Profile image" style="width:50px;height:50px;" />
+                   }
                    <p class="card-text">@post.Content</p>
                    @if(user != null && user.Id == post.UserId)
-                    {
-                        <a asp-route-deleteId="@post.Id" class="btn btn-primary">Ta bort</a>
-                    }
+                   {
+                       <a asp-route-deleteId="@post.Id" class="btn btn-primary">Ta bort</a>
+                   }
                 </div>
-               <p class="card-footer">@post.Date @User.Identity.Name</p>
-
+               <p class="card-footer">@post.Date.ToString("g") @post.User.UserName</p>
            </div>
-
         }
     }
 </div>
 @if(SignInManager.IsSignedIn(User))
 {
     <p>User: @User.Identity.Name</p>
-// Gör en specifkt för subcategpry
-   <li><a asp-page="/CreatePost" asp-route-category="CreatePost">Create Post in this subcategory</a></li>
+    <li><a asp-page="/CreatePost" asp-route-category="CreatePost">Create Post in this subcategory</a></li>
 }
 else
 {

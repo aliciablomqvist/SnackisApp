@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace SnackisApp.Models
 {
@@ -9,10 +10,14 @@ namespace SnackisApp.Models
 
         [Required]
         public string SenderId { get; set; }
+
+          [ValidateNever]
         public SnackisUser Sender { get; set; }
 
         [Required]
         public string RecipientId { get; set; }
+
+          [ValidateNever]
         public SnackisUser Recipient { get; set; }
 
         [Required]

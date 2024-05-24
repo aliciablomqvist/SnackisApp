@@ -6,6 +6,6 @@ namespace SnackisApp.Models
     public class SnackisUser : IdentityUser
     {
   [Required]
-            public string ProfileImageUrl { get; set; } = "default-profile-image-url.jpg";
+            public string ProfileImageUrl { get; set; } = "./wwwroot/profileImages/yogaprofile.png";
     }
 }

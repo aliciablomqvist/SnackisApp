@@ -54,6 +54,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminCategoryManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluQ2F0ZWdvcnlNYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminRoleManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluUm9sZU1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminScaffold/UserAdmin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluU2NhZmZvbGQvVXNlckFkbWluL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminScaffold/UserAdmin/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluU2NhZmZvbGQvVXNlckFkbWluL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminScaffold/UserAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluU2NhZmZvbGQvVXNlckFkbWluL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminScaffold/UserAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluU2NhZmZvbGQvVXNlckFkbWluL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/AdminScaffold/UserAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0FkbWluU2NhZmZvbGQvVXNlckFkbWluL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/SnackisApp/Pages/AdminRole/ViewReports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5Sb2xlL1ZpZXdSZXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/jack.blomqvist/SnackisApp/Pages/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -112,10 +148,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/jack.blomqvist/SnackisApp/Pages/ViewPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmlld1Bvc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/jack.blomqvist/SnackisApp/Pages/ViewReports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmlld1JlcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jack.blomqvist/SnackisApp/Pages/_CommentPartial.cshtml]

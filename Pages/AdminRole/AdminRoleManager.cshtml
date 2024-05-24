@@ -1,0 +1,45 @@
+@page
+@model SnackisApp.Pages.AdminRole.AdminRoleManagerModel
+@{
+    ViewData["Title"] = "Admin Role Management";
+}
+
+
+<h2>Manage Roles</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="RoleName"></label>
+        <input asp-for="RoleName" class="form-control" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Role</button>
+</form>
+
+<h3>Existing Roles</h3>
+<ul>
+    @foreach (var role in Model.Roles)
+    {
+        <li>@role.Name</li>
+    }
+</ul>
+
+<h3>Users</h3>
+<ul>
+    @foreach (var user in Model.Users)
+    {
+        <li>
+            @user.UserName
+            <form method="get" style="display:inline;">
+                <input type="hidden" name="AddUserId" value="@user.Id" />
+                <input type="hidden" name="RoleName" value="Admin" />
+                <button type="submit" class="btn btn-success btn-sm">Add to Admin</button>
+            </form>
+            <form method="get" style="display:inline;">
+                <input type="hidden" name="RemoveUserId" value="@user.Id" />
+                <input type="hidden" name="RoleName" value="Admin" />
+                <button type="submit" class="btn btn-danger btn-sm">Remove from Admin</button>
+            </form>
+        </li>
+    }
+</ul>

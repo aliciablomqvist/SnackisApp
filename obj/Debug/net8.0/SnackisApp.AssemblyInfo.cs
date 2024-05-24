@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SnackisApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc23cb0f4eccc2443d7bfe010bf5bfbb9c487504")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a3e15d5c53bacbc389f9791108ead00fff828cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SnackisApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SnackisApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,7 +7,7 @@ using SnackisApp.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SnackisApp.Pages
+namespace SnackisApp.Pages.AdminRole
 {
     public class ViewReportsModel : PageModel
     {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jack.blomqvist/SnackisApp/SnackisApp.csproj": {}
+    "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/SnackisApp.csproj": {}
   },
   "projects": {
-    "/Users/jack.blomqvist/SnackisApp/SnackisApp.csproj": {
+    "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/SnackisApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jack.blomqvist/SnackisApp/SnackisApp.csproj",
+        "projectUniqueName": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/SnackisApp.csproj",
         "projectName": "SnackisApp",
-        "projectPath": "/Users/jack.blomqvist/SnackisApp/SnackisApp.csproj",
+        "projectPath": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/SnackisApp.csproj",
         "packagesPath": "/Users/jack.blomqvist/.nuget/packages/",
-        "outputPath": "/Users/jack.blomqvist/SnackisApp/obj/",
+        "outputPath": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jack.blomqvist/.nuget/NuGet/NuGet.Config"
@@ -63,6 +63,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

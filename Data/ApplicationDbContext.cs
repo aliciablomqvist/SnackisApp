@@ -20,6 +20,8 @@ public class ApplicationDbContext : IdentityDbContext<SnackisUser>
 
      public DbSet<Report> Reports { get; set; }
 
+     public DbSet<Philosopher> Philosopher { get; set; }
+
 
  protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

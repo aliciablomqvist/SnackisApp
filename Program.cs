@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SnackisApp.Data;
+using SnackisApp.Services;
+//using SnackisApp.DAL;
 using SnackisApp.Models;
 using SnackisApp.Helpers;
 
@@ -19,6 +21,18 @@ builder.Services.AddDefaultIdentity<SnackisUser>(options => options.SignIn.Requi
 
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+
+    builder.Services.AddHttpClient<DiscussionService>();
+         builder.Services.AddHttpClient<DailyphilosopherService>();
+ 
+ // Add HttpClient (API)
+builder.Services.AddHttpClient();
+
+  // Register DiscussionService
+    builder.Services.AddScoped<DiscussionService>();
+
+// Register Dailyphilosophers
+     builder.Services.AddScoped<DailyphilosopherService>();
 
 var app = builder.Build();
 

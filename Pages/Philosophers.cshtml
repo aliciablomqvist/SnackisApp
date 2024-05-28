@@ -1,0 +1,21 @@
+@page
+@model SnackisApp.Pages.PhilosopherModel
+@{
+    ViewData["Title"] = "Philosophers";
+}
+
+<h2>Philosophers</h2>
+
+@if (Model.Dailyphilosophers != null && Model.Dailyphilosophers.Count > 0)
+{
+<ul>
+    @foreach (var philosopher in Model.Dailyphilosophers)
+    {
+        <li>@philosopher.Name - @philosopher.Quote</li>
+    }
+</ul>
+}
+else
+{
+    <p>No philosophers available.</p>
+}

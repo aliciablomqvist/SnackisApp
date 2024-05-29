@@ -48,3 +48,20 @@ button.accept-policy[b-gkyf60dowz] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+
+.nav-profile-image[b-gkyf60dowz] {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 200px;
+}
+
+.nav-icon[b-gkyf60dowz] {
+  font-size: 24px; /* Adjust the size as needed */
+  color: #7f6988; /* Ensure it matches your color scheme */
+  vertical-align: middle; /* Align with the text */
+  margin-top: -4px; /* Adjust to vertically align with text if necessary */
+
+}

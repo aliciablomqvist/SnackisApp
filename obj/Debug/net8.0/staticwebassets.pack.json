@@ -9,16 +9,28 @@
       "PackagePath": "staticwebassets/css/index.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/messages.css",
+      "PackagePath": "staticwebassets/css/messages.css"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/post.css",
+      "PackagePath": "staticwebassets/css/post.css"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/profile.css",
+      "PackagePath": "staticwebassets/css/profile.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/favicon.ico",
-      "PackagePath": "staticwebassets/favicon.ico"
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/subcategory.css",
+      "PackagePath": "staticwebassets/css/subcategory.css"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/img/lotuslogo.jpg",
-      "PackagePath": "staticwebassets/img/lotuslogo.jpg"
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/js/site.js",
@@ -269,6 +281,18 @@
       "PackagePath": "staticwebassets/siteImages/background.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/cutemail.jpg",
+      "PackagePath": "staticwebassets/siteImages/cutemail.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/lotuslogo.jpg",
+      "PackagePath": "staticwebassets/siteImages/lotuslogo.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/pinkmail.png",
+      "PackagePath": "staticwebassets/siteImages/pinkmail.png"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/21227download.jpg",
       "PackagePath": "staticwebassets/userImages/21227download.jpg"
     },
@@ -281,20 +305,24 @@
       "PackagePath": "staticwebassets/userImages/338download.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/39225international-yoga-day-iphone-background-ktos7.webp",
+      "PackagePath": "staticwebassets/userImages/39225international-yoga-day-iphone-background-ktos7.webp"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/43536download.jpg",
       "PackagePath": "staticwebassets/userImages/43536download.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/52966depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
-      "PackagePath": "staticwebassets/userImages/52966depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
-    },
-    {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/54713pngtree-yoga-studio-poster-illustration-picture-image_1120819.png",
-      "PackagePath": "staticwebassets/userImages/54713pngtree-yoga-studio-poster-illustration-picture-image_1120819.png"
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/46357yoga-profile.png",
+      "PackagePath": "staticwebassets/userImages/46357yoga-profile.png"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/60767download.jpg",
       "PackagePath": "staticwebassets/userImages/60767download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/62837images.jpg",
+      "PackagePath": "staticwebassets/userImages/62837images.jpg"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/65460download.jpg",
@@ -303,6 +331,10 @@
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",
       "PackagePath": "staticwebassets/userImages/93174download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/939797ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp",
+      "PackagePath": "staticwebassets/userImages/939797ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SnackisApp.Microsoft.AspNetCore.StaticWebAssets.props",

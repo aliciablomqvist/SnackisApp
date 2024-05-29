@@ -102,16 +102,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlUG9zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Discussions.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGlzY3Vzc2lvbnMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Forum.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ydW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Index.cshtml]
@@ -120,10 +112,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Messages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWVzc2FnZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Philosophers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGhpbG9zb3BoZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Privacy.cshtml]
@@ -148,10 +136,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/SubCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3ViQ2F0ZWdvcnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/TestCategories.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGVzdENhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/ViewPost.cshtml]

@@ -8,40 +8,44 @@
     ViewData["Title"] = Model.SubCategory.Name;
     var user = await UserManager.GetUserAsync(User);
 }
+<head>
+    <link rel="stylesheet" href="~/css/subcategory.css" asp-append-version="true" />
+</head>
+
 <h2>@Model.SubCategory.Name</h2>
 
-<div class="row">
+<div class="subcategory-list">
     @if(Model.Posts != null)
     {
         @foreach(var post in Model.Posts)
         {
-           <div class="card m-2" style="width: 18rem">
-               <img class="card-img-top" src="~/userImages/@post.Image" />
-               <div class="card-body">
-                   <h5 class="card-title">
-                       <a asp-page="/ViewPost" asp-route-id="@post.Id">@post.Title</a>
-                   </h5>
-                   @if (!string.IsNullOrEmpty(post.User?.ProfileImageUrl))
-                   {
-                       <img class="card-img-top" src="@post.User.ProfileImageUrl" alt="Profile image" style="width:50px;height:50px;" />
-                   }
-                   <p class="card-text">@post.Content</p>
-                   @if(user != null && user.Id == post.UserId)
-                   {
-                       <a asp-route-deleteId="@post.Id" class="btn btn-primary">Ta bort</a>
-                   }
+            <a asp-page="/ViewPost" asp-route-id="@post.Id" class="subcategory-link">
+                <div class="subcategory-item">
+                    <div class="subcategory-header">
+                        <img class="profile-image" src="@post.User.ProfileImageUrl" alt="Profile image"/>
+                        <div class="subcategory-meta">
+                            <div>@post.User.UserName, @post.Date.ToString("g")</div>
+                        </div>
+                    </div>
+                    <img class="post-image" src="~/userImages/@post.Image" alt="Post image" />
+                    <h3 class="post-title">@post.Title</h3>
+                    <p class="subcategory-content">@post.Content</p>
+                    @if(user != null && user.Id == post.UserId)
+                    {
+                        <a asp-route-deleteId="@post.Id" class="btn btn-primary">Delete post</a>
+                    }
                 </div>
-               <p class="card-footer">@post.Date.ToString("g") @post.User.UserName</p>
-           </div>
+            </a>
         }
     }
 </div>
 @if(SignInManager.IsSignedIn(User))
 {
-    <p>User: @User.Identity.Name</p>
-    <li><a asp-page="/CreatePost" asp-route-category="CreatePost">Create Post in this subcategory</a></li>
+  <a asp-page="/CreatePost" asp-route-category="CreatePost" class="btn btn-primary">Create Post in this subcategory</a>
 }
 else
 {
     <div class="alert alert-danger">To write your own posts, you need to be logged in.</div>
 }
+<br>
+<br>

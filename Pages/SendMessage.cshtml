@@ -4,13 +4,21 @@
     ViewData["Title"] = "Send Message";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/messages.css" asp-append-version="true" />
+</head>
+
 <h2>Send a Message</h2>
 
-<form method="post">
+<form method="post" class="send-message-form">
     <div class="form-group">
         <label asp-for="RecipientId">Recipient</label>
-        <select asp-for="RecipientId" class="form-control" asp-items="Model.Users">
+        <select asp-for="RecipientId" class="form-control">
             <option value="">Select a user</option>
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Value">@user.Text</option>
+            }
         </select>
         <span asp-validation-for="RecipientId" class="text-danger"></span>
     </div>

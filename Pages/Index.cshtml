@@ -1,7 +1,6 @@
 ﻿@page
 @using SnackisApp;
 @using SnackisApp.Models;
-@using SnackisApp.Models
 @inject SignInManager<SnackisUser> SignInManager
 @inject UserManager<SnackisUser> UserManager
 @model IndexModel
@@ -12,61 +11,94 @@
 <head>
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 </head>
-@if (SignInManager.IsSignedIn(User))
-{
-    <div class="StartDiv">
-        <h2>Welcome to Mindful Movement!</h2>
-        <p>
-            Mindful Movement is a serene space for enthusiasts of yoga, body wellness, meditation, mindfulness, and holistic living.
-            Customize your profile to reflect your journey by clicking on your <a asp-page="/UserHome">username</a> in the navigation bar and exploring the settings.
-        </p>
-        <p>
-            Navigate our forum by choosing a category from the menu above. Our categories include:
 
-<ul>
-    <li><a asp-page="/Category" asp-route-category="Yoga">Yoga</a></li>
-    <li><a asp-page="/Category" asp-route-category="Meditation">Meditation</a></li>
-    <li><a asp-page="/Category" asp-route-category="Mindfulness">Mindfulness</a></li>
-    <li><a asp-page="/Category" asp-route-category="Livsstil">Livsstil</a></li>
-    <li><a asp-page="/Category" asp-route-category="Community">Community</a></li>
-</ul>
-
-        </p>
-        <p>
-            Engage with the community by reading, voting, and replying to posts, or create your own to share your insights and questions!
-        </p>
-        <p>
-            You can also connect with other members through private messages to share experiences, seek advice, or simply make new friends.
-            Please remember to protect your personal information and avoid sharing sensitive details such as your full name, credit card information, phone number, or address.
-        </p>
-        <p>
-            Now you are all set to dive into the world of mindfulness with Mindful Movement!
-            Remember, the journey is as important as the destination. Enjoy and be present!
-        </p>
+<div class="container">
+    <div class="sidebar-left">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div class="StartDiv">
+                <h2>Welcome to Mindful Movement!</h2>
+                <p>
+                    Mindful Movement is a serene space for enthusiasts of yoga, body wellness, meditation, mindfulness, and holistic living.
+                </p>
+                <p>
+                    Navigate our forum by choosing a category from the menu above. Our categories include:
+                </p>
+                <ul class="horizontal-list">
+                    <li>Yoga</li>
+                    <li>Meditation</li>
+                    <li>Mindfulness</li>
+                    <li>Lifestyle</li>
+                    <li>Community</li>
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div class="StartDiv">
+                <h2>You are not logged in!</h2>
+                <p>
+                    Log in to your account to post on Mindful Movement. Click the log in button in the menu!
+                </p>
+                <p>
+                    If you do not have an account, register by clicking the register button in the menu and join our mindful community!
+                </p>
+                <p>
+                    You can still read our posts. Navigate our forum by choosing a category from the menu above. Our categories include:
+                </p>
+                <ul class="horizontal-list">
+                    <li>Yoga</li>
+                    <li>Meditation</li>
+                    <li>Mindfulness</li>
+                    <li>Lifestyle</li>
+                    <li>Community</li>
+                </ul>
+            </div>
+        }
     </div>
+
+    <div class="main-content">
+       <h2>Our latest discussions</h2>
+
+@if (Model.Discussions != null && Model.Discussions.Count > 0)
+{
+    <ul class="discussion-list">
+    @foreach (var discussion in Model.Discussions)
+    {
+        <li class="discussion-item">
+            <div class="discussion-header">
+                <img src="@discussion.User.ProfileImageUrl" alt="Profile image" class="profile-image" />
+                <div>
+                    <strong><a asp-page="/ViewPost" asp-route-id="@discussion.Id">@discussion.Title </a></strong>
+                    <div class="discussion-meta">by @discussion.User.UserName on @discussion.Date.ToString("g")</div>
+                </div>
+            </div>
+            <p class="discussion-content">@discussion.Content</p>
+        </li>
+    }
+    </ul>
 }
 else
 {
-    <div class="StartDiv">
-        <h2>You are not logged in!</h2>
-        <p>
-            Log in to your account to access Mindful Movement. Click the log in button in the menu!
-        </p>
-        <p>
-            If you do not have an account, register by clicking the register button in the menu and join our mindful community!
-        </p>
+    <p>No discussions available.</p>
+}
 
-        <p>
-            Navigate our forum by choosing a category from the menu above. Our categories include:
-
-<ul>
-    <li><a asp-page="/Category" asp-route-category="Yoga">Yoga</a></li>
-    <li><a asp-page="/Category" asp-route-category="Meditation">Meditation</a></li>
-    <li><a asp-page="/Category" asp-route-category="Mindfulness">Mindfulness</a></li>
-    <li><a asp-page="/Category" asp-route-category="Livsstil">Livsstil</a></li>
-    <li><a asp-page="/Category" asp-route-category="Community">Community</a></li>
-</ul>
-        </p>
     </div>
 
-}
+    <div class="sidebar-right">
+        <div class="StartDiv philosopher-div">
+            <h2>Philosopher of the Day</h2>
+            @if (Model.RandomPhilosopher != null)
+            {
+                <p><strong>@Model.RandomPhilosopher.Name</strong> - @Model.RandomPhilosopher.Quote</p>
+            }
+            else
+            {
+                <p>No philosophers available.</p>
+            }
+
+              <h2>Our top 3</h2>
+               <p>...</p>
+        </div>
+    </div>
+</div>

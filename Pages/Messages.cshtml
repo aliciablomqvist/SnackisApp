@@ -4,23 +4,29 @@
     ViewData["Title"] = "Messages";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/messages.css" asp-append-version="true" />
+</head>
+
 <h2>Messages</h2>
 
-<div>
-    <a asp-page="/SendMessage" class="btn btn-primary"> Write a New Message</a>
+<div class="message-actions">
+    <a asp-page="/SendMessage" class="btn btn-primary">Write a New Message</a>
 </div>
 
 <h3>Inbox</h3>
 
 @if (Model.ReceivedMessages != null && Model.ReceivedMessages.Count > 0)
 {
-    <ul>
+    <ul class="message-list">
     @foreach (var message in Model.ReceivedMessages)
     {
-        <li>
-            <strong>From:</strong> @message.Sender.UserName<br />
-            <strong>Date:</strong> @message.DateSent<br />
-            <p>@message.Content</p>
+        <li class="message-item">
+            <div class="message-header">
+                <strong>From:</strong> @message.Sender.UserName<br />
+                <strong>Date:</strong> @message.DateSent<br />
+            </div>
+            <p class="message-content">@message.Content</p>
         </li>
     }
     </ul>
@@ -34,13 +40,15 @@ else
 
 @if (Model.SentMessages != null && Model.SentMessages.Count > 0)
 {
-    <ul>
+    <ul class="message-list">
     @foreach (var message in Model.SentMessages)
     {
-        <li>
-            <strong>To:</strong> @message.Recipient.UserName<br />
-            <strong>Date:</strong> @message.DateSent<br />
-            <p>@message.Content</p>
+        <li class="message-item">
+            <div class="message-header">
+                <strong>To:</strong> @message.Recipient.UserName<br />
+                <strong>Date:</strong> @message.DateSent<br />
+            </div>
+            <p class="message-content">@message.Content</p>
         </li>
     }
     </ul>

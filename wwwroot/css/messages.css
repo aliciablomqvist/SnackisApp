@@ -1,0 +1,144 @@
+body {
+    font-family: 'Open Sans', sans-serif; 
+    background-color: rgba(183, 157, 204, 0.148);
+    color: #7f6988; /* Consistent text color */
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #7f6988; /* Consistent heading color */
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.message-actions .btn {
+    background-color: #7f6988; /* Match the theme color */
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.message-actions .btn:hover {
+    background-color: #6b577a; /* Darker shade for hover */
+}
+
+.message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.message-item {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.message-header {
+    margin-bottom: 10px;
+}
+
+.message-header strong {
+    color: #7f6988; /* Consistent strong text color */
+    font-weight: bold;
+}
+
+.message-content {
+    margin-top: 10px;
+    color: #555555; /* Slightly darker color for message content */
+}
+
+.message-content p {
+    margin: 0;
+}
+
+.no-messages {
+    text-align: center;
+    color: #999999;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.send-message-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    color: #7f6988;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border: 1px solid #c1b5d0;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #7f6988;
+    box-shadow: 0 0 5px rgba(127, 105, 136, 0.5);
+}
+
+.text-danger {
+    color: #e74c3c;
+}
+
+.btn {
+    background-color: #7f6988; /* Match the theme color */
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+  
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #6b577a; /* Darker shade for hover */
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.alert ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

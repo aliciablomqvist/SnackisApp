@@ -1,28 +1,116 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-left, .sidebar-right {
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+}
+
+.main-content {
+    width: 80%;
+    padding: 10px;
+}
+
 .StartDiv {
-    width: 500px;
-    max-width: 200%; /* Se till att det inte överstiger förälderns bredd */
-    padding: 30px;
-    background-color: rgba(183, 157, 204, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.horizontal-list {
+    list-style-type: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
-    margin: 0 auto; /* Centrerar div:en horisontellt */
 }
 
+.horizontal-list li {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; 
+    background-color: rgba(183, 157, 204, 0.148);
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
 
 h2 {
-    color: #70527c; /* Bibehållen färg från din ursprungliga stil */
-    font-family: 'Open Sans', sans-serif; /* En ren och lättläst typsnitt */
-    font-weight: 300; /* Gör texten lättare för en mer luftig känsla */
-    text-align: center; /* Centrerar rubriken */
+    color: #7f6988;
+    font-weight: 300;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Stil för ytterligare element som kan finnas i .StartDiv */
-p {
-    color: #564357; /* En mörkare ton för kontrast */
-    font-size: 16px;
-    line-height: 1.6; /* Ökar radavståndet för bättre läsbarhet */
+.discussion-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.discussion-item {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.discussion-item:hover {
+    transform: translateY(-5px);
+}
+
+.discussion-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.discussion-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.discussion-header strong a {
+    font-family: 'Open Sans', sans-serif; 
+    color: #7f6988;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.discussion-header strong a:hover {
+    text-decoration: underline;
+}
+
+.discussion-meta {
+    font-size: 0.9em;
+    color: #777777;
+}
+
+.discussion-content {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555555;
 }

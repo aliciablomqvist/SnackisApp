@@ -4,25 +4,40 @@
     ViewData["Title"] = Model.Post.Title;
 }
 
-<h2>@Model.Post.Title</h2>
+<head>
+    <link rel="stylesheet" href="~/css/post.css" asp-append-version="true" />
+</head>
 
-@if (!string.IsNullOrEmpty(Model.Post.User.ProfileImageUrl))
-{
-    <img class="card-img-top" src="@Model.Post.User.ProfileImageUrl" alt="Profile image" style="width:50px;height:50px;" />
-}
+<h2 class="post-title">@Model.Post.Title</h2>
 
-<p><strong>Posted by:</strong> @Model.UserName</p>
+<div class="post-header">
+    @if (!string.IsNullOrEmpty(Model.Post.User.ProfileImageUrl))
+    {
+        <img class="profile-image" src="@Model.Post.User.ProfileImageUrl" alt="Profile image" />
+    }
+    <p><strong>Posted by:</strong> @Model.UserName</p>
+</div>
 
-<p>@Model.Post.Content</p>
-@if (!string.IsNullOrEmpty(Model.Post.Image))
-{
-    <img src="/userImages/@Model.Post.Image" alt="Post image" />
-}
+<div class="post-content">
+        @if (!string.IsNullOrEmpty(Model.Post.Image))
+    {
+        <img class="post-image" src="/userImages/@Model.Post.Image" alt="Post image" />
+    }
+    <p>@Model.Post.Content</p>
 
-<h3>Comments</h3>
+</div>
+
+
+<form method="post" asp-page-handler="Report" class="report-post-form">
+    <input type="hidden" name="postId" value="@Model.Post.Id" />
+    <input type="hidden" name="reportedById" value="@User.Identity?.Name" />
+    <button type="submit" class="btn btn-danger">Report Post</button>
+</form>
+
+<h3 class="comments-title">Comments</h3>
 @if (Model.Comments != null && Model.Comments.Count > 0)
 {
-    <ul>
+    <ul class="comments-list">
     @foreach (var comment in Model.Comments)
     {
         @Html.Partial("_CommentPartial", comment)
@@ -31,14 +46,14 @@
 }
 else
 {
-    <p>No comments yet.</p>
+    <p class="no-comments">No comments yet.</p>
 }
 
-<h3>Add a Comment</h3>
-<form method="post">
+<h3 class="add-comment-title">Add a Comment</h3>
+<form method="post" class="add-comment-form">
     <input type="hidden" name="ParentCommentId" value="" />
-    <textarea name="NewCommentContent" cols="40" rows="5"></textarea>
-    <input type="submit" class="btn btn-success" value="Add Comment" />
+    <textarea name="NewCommentContent" class="form-control" cols="40" rows="5"></textarea>
+    <button type="submit" class="btn btn-success">Add Comment</button>
 </form>
 
 @if (!ViewData.ModelState.IsValid)
@@ -66,20 +81,4 @@ else
     </script>
 }
 
-<form method="post" asp-page-handler="Report">
-    <input type="hidden" name="postId" value="@Model.Post.Id" />
-    <input type="hidden" name="reportedById" value="@User.Identity?.Name" />
-    <input type="submit" class="btn btn-danger" value="Report Post" />
-</form>
 
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert alert-danger">
-        <ul>
-        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-        {
-            <li>@error.ErrorMessage</li>
-        }
-        </ul>
-    </div>
-}

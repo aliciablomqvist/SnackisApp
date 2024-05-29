@@ -2,8 +2,6 @@ body {
     font-family: 'Open Sans', sans-serif; 
     background-color: rgba(183, 157, 204, 0.148);
     color: #7f6988; /* Consistent text color */
-    margin: 0;
-    padding: 0;
 }
 
 h2 {

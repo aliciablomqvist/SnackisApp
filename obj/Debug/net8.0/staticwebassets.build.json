@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h34HfB1Vto4Vrcwai+hs5YJuhTxzlRkQs5Kvwvoh+Ds=",
+  "Hash": "XpKoqQMQDSJVRl9oh2engjavieB7lCDzyQIYToUUCVU=",
   "Source": "SnackisApp",
   "BasePath": "_content/SnackisApp",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Debug/net8.0/scopedcss/projectbundle/SnackisApp.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/admin.css",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/admin.css"
     },
     {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",
@@ -2506,25 +2525,6 @@
       "OriginalItemSpec": "wwwroot/siteImages/background.jpg"
     },
     {
-      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/cutemail.jpg",
-      "SourceId": "SnackisApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
-      "BasePath": "_content/SnackisApp",
-      "RelativePath": "siteImages/cutemail.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/siteImages/cutemail.jpg"
-    },
-    {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/lotuslogo.jpg",
       "SourceId": "SnackisApp",
       "SourceType": "Discovered",
@@ -2544,12 +2544,12 @@
       "OriginalItemSpec": "wwwroot/siteImages/lotuslogo.jpg"
     },
     {
-      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/pinkmail.png",
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/yogaadvert.webp",
       "SourceId": "SnackisApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
       "BasePath": "_content/SnackisApp",
-      "RelativePath": "siteImages/pinkmail.png",
+      "RelativePath": "siteImages/yogaadvert.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2560,7 +2560,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/siteImages/pinkmail.png"
+      "OriginalItemSpec": "wwwroot/siteImages/yogaadvert.webp"
     },
     {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/21227download.jpg",
@@ -2658,25 +2658,6 @@
       "OriginalItemSpec": "wwwroot/userImages/43536download.jpg"
     },
     {
-      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/46357yoga-profile.png",
-      "SourceId": "SnackisApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
-      "BasePath": "_content/SnackisApp",
-      "RelativePath": "userImages/46357yoga-profile.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/userImages/46357yoga-profile.png"
-    },
-    {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/60767download.jpg",
       "SourceId": "SnackisApp",
       "SourceType": "Discovered",
@@ -2696,25 +2677,6 @@
       "OriginalItemSpec": "wwwroot/userImages/60767download.jpg"
     },
     {
-      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/62837images.jpg",
-      "SourceId": "SnackisApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
-      "BasePath": "_content/SnackisApp",
-      "RelativePath": "userImages/62837images.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/userImages/62837images.jpg"
-    },
-    {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/65460download.jpg",
       "SourceId": "SnackisApp",
       "SourceType": "Discovered",
@@ -2732,6 +2694,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/userImages/65460download.jpg"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/73404cutemessages.jpg",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "userImages/73404cutemessages.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/userImages/73404cutemessages.jpg"
     },
     {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",

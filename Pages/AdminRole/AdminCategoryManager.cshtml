@@ -4,18 +4,22 @@
     ViewData["Title"] = "Admin Category Manager";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+
 <h1>Admin Category Manager</h1>
 
 <h2>Categories</h2>
 @if (Model.Categories != null && Model.Categories.Count > 0)
 {
-    <ul>
+    <ul class="admin-list">
         @foreach (var existingCategory in Model.Categories)
         {
             <li>
                 @existingCategory.Name
-                <a asp-page="./AdminCategoryManager" asp-route-changeExistingCategoryId="@existingCategory.Id">Edit</a>
-                <a asp-page="./AdminCategoryManager" asp-route-deleteExistingCategoryId="@existingCategory.Id">Delete</a>
+                <a asp-page="./AdminCategoryManager" asp-route-changeExistingCategoryId="@existingCategory.Id" class="btn btn-link">Edit</a>
+                <a asp-page="./AdminCategoryManager" asp-route-deleteExistingCategoryId="@existingCategory.Id" class="btn btn-link">Delete</a>
             </li>
         }
     </ul>
@@ -40,13 +44,13 @@ else
 <h2>SubCategories</h2>
 @if (Model.SubCategories != null && Model.SubCategories.Count > 0)
 {
-    <ul>
+    <ul class="admin-list">
         @foreach (var existingSubCategory in Model.SubCategories)
         {
             <li>
                 @existingSubCategory.Name
-                <a asp-page="./AdminCategoryManager" asp-route-changeExistingSubCategoryId="@existingSubCategory.Id">Edit</a>
-                <a asp-page="./AdminCategoryManager" asp-route-deleteExistingSubCategoryId="@existingSubCategory.Id">Delete</a>
+                <a asp-page="./AdminCategoryManager" asp-route-changeExistingSubCategoryId="@existingSubCategory.Id" class="btn btn-link">Edit</a>
+                <a asp-page="./AdminCategoryManager" asp-route-deleteExistingSubCategoryId="@existingSubCategory.Id" class="btn btn-link">Delete</a>
             </li>
         }
     </ul>

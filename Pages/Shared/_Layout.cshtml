@@ -38,16 +38,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
 
-          
-
-
-    @if (User.IsInRole("Admin"))
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-page="/AdminRole/Index">Admin</a>
-    </li>
-}
-
                        @{
                             try
                             {
@@ -86,14 +76,24 @@
                             {
                                 Console.WriteLine($"Error fetching categories: {ex.Message}");
                             }
-                        }
+
+                            @if (User.IsInRole("Admin"))
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-page="/AdminRole/Index">
+            <i class="fas fa-user-shield"></i> 
+        </a>
+    </li>
+}
+
+                        @if (SignInManager.IsSignedIn(User))
+                    {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Messages">
                                 <i class="fas fa-envelope nav-icon"></i>
                             </a>
                         </li>
-@if (SignInManager.IsSignedIn(User))
-                    {
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/ProfilePage">
                                 @if (!string.IsNullOrEmpty(user?.ProfileImageUrl))
@@ -107,8 +107,7 @@
                             </a>
                         </li>
                     }
-       
-                                            
+                    }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

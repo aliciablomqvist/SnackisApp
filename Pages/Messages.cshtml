@@ -1,12 +1,23 @@
 @page
 @model MessagesModel
+@using SnackisApp.Models
+@inject SignInManager<SnackisUser> SignInManager
+@inject UserManager<SnackisUser> UserManager
 @{
     ViewData["Title"] = "Messages";
+    var user = await UserManager.GetUserAsync(User);
 }
+
+
+
 
 <head>
     <link rel="stylesheet" href="~/css/messages.css" asp-append-version="true" />
 </head>
+
+
+    @if(SignInManager.IsSignedIn(User))
+    {
 
 <h2>Messages</h2>
 
@@ -56,4 +67,5 @@ else
 else
 {
     <p>No messages sent.</p>
+}
 }

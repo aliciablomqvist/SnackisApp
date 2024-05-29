@@ -2,9 +2,12 @@
 @model AdminPageModel
 @{
 }
+<head>
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
 
 <h3>Admin Page</h3>
-<ul>
+<ul class="admin-list">
 	<li><a asp-page="./AdminRoleManager"> Check user roles </a></li>
 	<li><a asp-page="./AdminCategoryManager">Manage Categories</a></li>
     	<li><a asp-page="./ViewReports">View Reports</a></li>

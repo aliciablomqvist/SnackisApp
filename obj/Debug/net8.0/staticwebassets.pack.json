@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/SnackisApp.bundle.scp.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/admin.css",
+      "PackagePath": "staticwebassets/css/admin.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",
       "PackagePath": "staticwebassets/css/index.css"
     },
@@ -281,16 +285,12 @@
       "PackagePath": "staticwebassets/siteImages/background.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/cutemail.jpg",
-      "PackagePath": "staticwebassets/siteImages/cutemail.jpg"
-    },
-    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/lotuslogo.jpg",
       "PackagePath": "staticwebassets/siteImages/lotuslogo.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/pinkmail.png",
-      "PackagePath": "staticwebassets/siteImages/pinkmail.png"
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/yogaadvert.webp",
+      "PackagePath": "staticwebassets/siteImages/yogaadvert.webp"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/21227download.jpg",
@@ -313,20 +313,16 @@
       "PackagePath": "staticwebassets/userImages/43536download.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/46357yoga-profile.png",
-      "PackagePath": "staticwebassets/userImages/46357yoga-profile.png"
-    },
-    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/60767download.jpg",
       "PackagePath": "staticwebassets/userImages/60767download.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/62837images.jpg",
-      "PackagePath": "staticwebassets/userImages/62837images.jpg"
-    },
-    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/65460download.jpg",
       "PackagePath": "staticwebassets/userImages/65460download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/73404cutemessages.jpg",
+      "PackagePath": "staticwebassets/userImages/73404cutemessages.jpg"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",

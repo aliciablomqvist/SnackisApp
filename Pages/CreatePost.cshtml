@@ -13,7 +13,6 @@
 </head>
 
 <div class="text-center">
-    <h1 class="display-4">Mindful Movement</h1>
     <h2 class="display-4">Create Post</h2>
 </div>
 
@@ -30,15 +29,15 @@
                 <textarea asp-for="Post.Content" class="form-control" cols="40" rows="5"></textarea>
             </div>
             <div class="form-group">
-                <label asp-for="Post.CategoryId"></label>
+                <label asp-for="Post.CategoryId"> Choose Category</label>
                 <select asp-for="Post.CategoryId" class="form-control" asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["Categories"], "Value", "Text"))"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Post.SubCategoryId"></label>
+                <label asp-for="Post.SubCategoryId">Choose Subcategory</label>
                 <select asp-for="Post.SubCategoryId" class="form-control" asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["SubCategories"], "Value", "Text"))"></select>
             </div>
             <div class="form-group">
-                <label asp-for="UploadedImage"></label>
+                <label asp-for="UploadedImage">Upload an image</label>
                 <input type="file" asp-for="UploadedImage" class="form-control-file" />
             </div>
             <button type="submit" class="btn btn-success">Save post</button>

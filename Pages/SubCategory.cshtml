@@ -1,5 +1,4 @@
 @page "/SubCategory/{id:int}"
-@using SnackisApp.Models
 @model SnackisApp.Pages.SubCategoryModel
 @using SnackisApp.Models
 @inject SignInManager<SnackisUser> SignInManager
@@ -10,42 +9,50 @@
 }
 <head>
     <link rel="stylesheet" href="~/css/subcategory.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<h2>@Model.SubCategory.Name</h2>
+<div class="header">
+    <h2>@Model.SubCategory.Name</h2>
+    @if(SignInManager.IsSignedIn(User))
+    {
+        <a asp-page="/CreatePost" asp-route-category="CreatePost" class="create-post-icon" title="Create Post">
+            <i class="fas fa-pen"></i>
+        </a>
+    }
+</div>
 
 <div class="subcategory-list">
     @if(Model.Posts != null)
     {
         @foreach(var post in Model.Posts)
         {
-            <a asp-page="/ViewPost" asp-route-id="@post.Id" class="subcategory-link">
-                <div class="subcategory-item">
-                    <div class="subcategory-header">
-                        <img class="profile-image" src="@post.User.ProfileImageUrl" alt="Profile image"/>
-                        <div class="subcategory-meta">
-                            <div>@post.User.UserName, @post.Date.ToString("g")</div>
+                 <div class="subcategory-item-wrapper">
+                <a asp-page="/ViewPost" asp-route-id="@post.Id" class="subcategory-link">
+                    <div class="subcategory-item">
+                        <div class="subcategory-header">
+                            <img class="profile-image" src="@post.User.ProfileImageUrl" alt="Profile image" />
+                            <div class="subcategory-meta">
+                                <div>@post.User.UserName, @post.Date.ToString("g")</div>
+                            </div>
                         </div>
+                        <img class="post-image" src="~/userImages/@post.Image" alt="Post image" />
+                        <h3 class="post-title">@post.Title</h3>
+                        <p class="subcategory-content">@post.Content</p>
                     </div>
-                    <img class="post-image" src="~/userImages/@post.Image" alt="Post image" />
-                    <h3 class="post-title">@post.Title</h3>
-                    <p class="subcategory-content">@post.Content</p>
-                    @if(user != null && user.Id == post.UserId)
-                    {
-                        <a asp-route-deleteId="@post.Id" class="btn btn-primary">Delete post</a>
-                    }
-                </div>
-            </a>
+                </a>
+                @if(user != null && user.Id == post.UserId)
+                {
+                    <a asp-route-deleteId="@post.Id" class="delete-post-icon" title="Delete Post">
+                        <i class="fas fa-times"></i>
+                    </a>
+                }
+            </div>
         }
     }
 </div>
-@if(SignInManager.IsSignedIn(User))
-{
-  <a asp-page="/CreatePost" asp-route-category="CreatePost" class="btn btn-primary">Create Post in this subcategory</a>
-}
-else
+
+@if(!SignInManager.IsSignedIn(User))
 {
     <div class="alert alert-danger">To write your own posts, you need to be logged in.</div>
 }
-<br>
-<br>

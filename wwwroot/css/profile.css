@@ -50,7 +50,7 @@ h2 {
     color: #e74c3c;
 }
 
-.btn {
+.upload-btn {
     background-color: #7f6988; /* Match the theme color */
     border: none;
     font-weight: bold;
@@ -60,6 +60,7 @@ h2 {
     display: block;
     width: 100%;
     box-sizing: border-box;
+    color: #ffffff;
 }
 
 .btn:hover {

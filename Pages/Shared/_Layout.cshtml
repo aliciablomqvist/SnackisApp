@@ -77,7 +77,7 @@
                                 Console.WriteLine($"Error fetching categories: {ex.Message}");
                             }
 
-                            @if (User.IsInRole("Admin"))
+                                                @if (User.IsInRole("Admin"))
 {
     <li class="nav-item">
         <a class="nav-link text-dark" asp-page="/AdminRole/Index">
@@ -109,6 +109,7 @@
                     }
                     }
                     </ul>
+
                     <partial name="_LoginPartial" />
                 </div>
             </div>

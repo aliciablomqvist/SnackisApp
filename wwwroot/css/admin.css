@@ -111,3 +111,19 @@ h3 {
 .btn-warning:hover {
     background-color: #e67e22;
 }
+
+#btn-btn-link-delete{
+    background-color:#51386d;
+    color: #fff;
+}
+
+#btn-btn-link-edit{
+    background-color: #8c7b9e;
+    color: #fff;
+}
+
+
+#btn-btn-link-save{
+    background-color: #8e5ec1;
+    color: #fff;
+}

@@ -285,8 +285,20 @@
       "PackagePath": "staticwebassets/siteImages/background.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/iconyoga.png",
+      "PackagePath": "staticwebassets/siteImages/iconyoga.png"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/lotuslogo.jpg",
       "PackagePath": "staticwebassets/siteImages/lotuslogo.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/meditation.jpg",
+      "PackagePath": "staticwebassets/siteImages/meditation.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/prettyflowers.jpg",
+      "PackagePath": "staticwebassets/siteImages/prettyflowers.jpg"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/yogaadvert.webp",

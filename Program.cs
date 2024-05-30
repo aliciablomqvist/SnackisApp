@@ -20,6 +20,8 @@ builder.Services.AddDefaultIdentity<SnackisUser>(options => options.SignIn.Requi
 .AddRoles<IdentityRole>()
 
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+//builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddControllers(); 
 

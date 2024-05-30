@@ -1,0 +1,67 @@
+@page
+@model SnackisApp.Pages.GroupPageModel
+
+<h1>Groups</h1>
+
+<form method="post" asp-page-handler="CreateGroup">
+    <input type="text" asp-for="GroupName" placeholder="Group Name" required />
+    <button type="submit">Create Group</button>
+</form>
+
+@foreach (var group in Model.Groups)
+{
+    <h2>@group.Name</h2>
+    <p>Members:</p>
+    <ul>
+        @foreach (var member in group.Members)
+        {
+            <li>
+                @member.User.UserName
+                <form method="post" asp-page-handler="RemoveMember">
+                    <input type="hidden" asp-for="GroupId" value="@group.Id" />
+                    <input type="hidden" asp-for="InvitedUserId" value="@member.User.Id" />
+                    <button type="submit">Remove Member</button>
+                </form>
+            </li>
+        }
+    </ul>
+    <form method="post" asp-page-handler="InviteUser">
+        <input type="hidden" asp-for="GroupId" value="@group.Id" />
+        <input type="text" asp-for="InvitedUserId" placeholder="User ID" required />
+        <button type="submit">Invite User</button>
+    </form>
+    <form method="post" asp-page-handler="SendMessage">
+        <input type="hidden" asp-for="GroupId" value="@group.Id" />
+        <textarea asp-for="MessageContent" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <h3>Messages:</h3>
+    <ul>
+        @foreach (var message in group.Messages)
+        {
+            <li>@message.User.UserName: @message.Content</li>
+        }
+    </ul>
+}
+
+<h3>Invitations</h3>
+@if (Model.Invitations != null && Model.Invitations.Count > 0)
+{
+    <ul>
+        @foreach (var invitation in Model.Invitations)
+        {
+            <li>
+                Group: @invitation.Group.Name - Invited by @invitation.InvitingUser.UserName
+                <form method="post" asp-page-handler="AcceptInvitation">
+                    <input type="hidden" name="groupId" value="@invitation.GroupId" />
+                    <input type="hidden" name="invitedUserId" value="@invitation.InvitedUserId" />
+                    <button type="submit">Accept Invitation</button>
+                </form>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No invitations available.</p>
+}

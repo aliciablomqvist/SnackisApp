@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vXqr/zTa1hNLF5WXWdaEMPA99OPkNB4LVGk8GHPSSJw=",
+  "Hash": "Zwj/xiAIF9bOvWKPbORzyU30c0RSDUS8dFDDrmVoZyM=",
   "Source": "SnackisApp",
   "BasePath": "_content/SnackisApp",
   "Mode": "Default",
@@ -2523,6 +2523,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/profileImages/c99f91a4-5ec4-40b5-a436-c1be9189999b_cute-profile-picture-19mnx03g9yap3dhy.jpg"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/Meditation-Yoga-Logo-7-1-580x348.jpg",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "profileImages/Meditation-Yoga-Logo-7-1-580x348.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profileImages/Meditation-Yoga-Logo-7-1-580x348.jpg"
     },
     {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/yogaprofile.png",

@@ -4,7 +4,7 @@
     ViewData["Title"] = "View Reports";
 }
 <head>
-    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/reportadmin.css" asp-append-version="true" />
 </head>
 <h2>View Reports</h2>
 
@@ -26,22 +26,21 @@
         {
             <tr>
                 <td>@report.PostId</td>
-                <td>@report.ReportedBy?.UserName ?? "Unknown"</td>
+                <td>@report.ReportedBy.UserName</td> <!-- Null check removed -->
                 <td>@report.ReportDate</td>
                 <td>@report.Reason</td>
                 <td>@report.Status</td>
                 <td>
                     @if (report.Status == SnackisApp.Models.ReportStatus.Pending)
                     {
-                        <form method="post" asp-page-handler="Approve" asp-route-id="@report.Id" style="display:inline;">
-                            <button type="submit" class="btn btn-success">Approve</button>
-                        </form>
-                        <form method="post" asp-page-handler="Reject" asp-route-id="@report.Id" style="display:inline;">
-                            <button type="submit" class="btn btn-danger">Reject</button>
-                        </form>
-                        <form method="post" asp-page-handler="DeletePost" asp-route-postId="@report.PostId" style="display:inline;">
-                            <button type="submit" class="btn btn-warning">Approve and Delete Post</button>
-                        </form>
+                        <div class="button-group">
+                            <form method="post" asp-page-handler="Reject" asp-route-id="@report.Id" class="inline-form">
+                                <button type="submit" class="btn btn-danger">Reject report</button>
+                            </form>
+                            <form method="post" asp-page-handler="DeletePost" asp-route-postId="@report.PostId" class="inline-form">
+                                <button type="submit" class="btn btn-warning">Approve and Delete</button>
+                            </form>
+                        </div>
                     }
                 </td>
             </tr>

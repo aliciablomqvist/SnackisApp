@@ -26,22 +26,16 @@ namespace SnackisApp.Pages.AdminRole
                 .Include(r => r.Post)
                 .Include(r => r.ReportedBy)
                 .ToListAsync();
-        }
-
-        public async Task<IActionResult> OnPostApproveAsync(int id)
+       
+// Nullcheck
+        foreach (var report in Reports)
         {
-            var report = await _context.Reports.FindAsync(id);
-            if (report == null)
+            if (report.ReportedBy == null)
             {
-                return NotFound();
+                report.ReportedBy = new SnackisUser { UserName = "Unknown" };
             }
-
-            report.Status = ReportStatus.Approved;
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage();
         }
-
+    }
         public async Task<IActionResult> OnPostRejectAsync(int id)
         {
             var report = await _context.Reports.FindAsync(id);
@@ -74,7 +68,7 @@ namespace SnackisApp.Pages.AdminRole
 
   
 
-    // Remove related reports
+    // Deletes related reports
     var reports = await _context.Reports.Where(r => r.PostId == postId).ToListAsync();
     if (reports != null && reports.Any())
     {

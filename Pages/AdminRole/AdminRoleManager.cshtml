@@ -5,45 +5,45 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/testadmin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<h3>Current users of Mindful Movement</h3>
+<body>
+
+    <main class="main">
+        <aside class="aside">Current users of Mindful Movement
+    
+            <ul class="admin-list">
+                @foreach (var user in Model.Users)
+                {
+                    <li class="admin-aside-content">
+                        @user.UserName
+                        <form method="get" style="display:inline;">
+                            <input type="hidden" name="AddUserId" value="@user.Id" />
+                            <input type="hidden" name="RoleName" value="Admin" />
+                            <button type="submit" class="btn btn-success btn-sm"> Add </button>
+                        </form>
+                            <form method="get" style="display:inline;">
+                                <input type="hidden" name="RemoveUserId" value="@user.Id" />
+                                <input type="hidden" name="RoleName" value="Admin" />
+                                <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
+                            </form>
+                       
+                    </li>
+                }
+            </ul>
+            </aside>
+
+
+        <div class="content">
+                <h3>Admin Page</h3>
 <ul class="admin-list">
-    @foreach (var user in Model.Users)
-    {
-        <li>
-            @user.UserName
-            <form method="get" style="display:inline;">
-                <input type="hidden" name="AddUserId" value="@user.Id" />
-                <input type="hidden" name="RoleName" value="Admin" />
-                <button type="submit" class="btn btn-success btn-sm">Add to Admin</button>
-            </form>
-            <form method="get" style="display:inline;">
-                <input type="hidden" name="RemoveUserId" value="@user.Id" />
-                <input type="hidden" name="RoleName" value="Admin" />
-                <button type="submit" class="btn btn-danger btn-sm">Remove from Admin</button>
-            </form>
-        </li>
-    }
+	<li><a asp-page="./AdminCategoryManager">Manage Categories</a></li>
+    	<li><a asp-page="./ViewReports">View Reports</a></li>
 </ul>
+        </div>
 
 
-<h2>Manage Roles</h2>
-
-<form method="post" class="admin-form">
-    <div class="form-group">
-        <label asp-for="RoleName"></label>
-        <input asp-for="RoleName" class="form-control" />
-        <span asp-validation-for="RoleName" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Create Role</button>
-</form>
-
-<h3>Existing Roles</h3>
-<ul class="admin-list">
-    @foreach (var role in Model.Roles)
-    {
-        <li>@role.Name</li>
-    }
-</ul>
+    </main>
+</body>

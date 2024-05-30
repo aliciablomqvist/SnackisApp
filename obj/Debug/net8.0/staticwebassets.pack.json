@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/admin.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/categoryadmin.css",
+      "PackagePath": "staticwebassets/css/categoryadmin.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",
       "PackagePath": "staticwebassets/css/index.css"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/subcategory.css",
       "PackagePath": "staticwebassets/css/subcategory.css"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/testadmin.css",
+      "PackagePath": "staticwebassets/css/testadmin.css"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/favicon.ico",

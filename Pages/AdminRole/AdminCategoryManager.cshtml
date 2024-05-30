@@ -5,75 +5,83 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/categoryadmin.css" asp-append-version="true" />
 </head>
 
-<h1>Admin Category Manager</h1>
+<h1>Admin Forum Manager</h1>
 
-<h2>Existing Categories</h2>
-@if (Model.Categories != null && Model.Categories.Count > 0)
-{
-    <ul class="admin-list">
-        @foreach (var existingCategory in Model.Categories)
-        {
-            <li>
-                @existingCategory.Name
-                <a asp-page="./AdminCategoryManager" asp-route-changeExistingCategoryId="@existingCategory.Id" class="btn btn-link" id="btn-btn-link-edit">Edit</a>
-                <a asp-page="./AdminCategoryManager" asp-route-deleteExistingCategoryId="@existingCategory.Id" class="btn btn-link" id="btn-btn-link-delete">Delete</a>
-            </li>
-        }
-    </ul>
-}
-else
-{
-    <p>No categories available.</p>
-}
+<div class="section">
+    <h2>Add new Category</h2>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="NewCategory.Name" class="control-label"></label>
+            <input asp-for="NewCategory.Name" class="form-control" />
+            <span asp-validation-for="NewCategory.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save Category" class="btn btn-primary btn-save" />
+        </div>
+    </form>
+    <br>
 
-<h2>Add or Edit Category</h2>
-<form method="post">
-    <div class="form-group">
-        <label asp-for="NewCategory.Name" class="control-label"></label>
-        <input asp-for="NewCategory.Name" class="form-control" />
-        <span asp-validation-for="NewCategory.Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Save Category" class="btn btn-primary" id="btn-btn-link-save" />
-    </div>
-</form>
+    <h2>Existing Categories</h2>
+    @if (Model.Categories != null && Model.Categories.Count > 0)
+    {
+        <ul class="admin-list">
+            @foreach (var existingCategory in Model.Categories)
+            {
+                <li class="admin-list-item">
+                    <span class="category-name">@existingCategory.Name</span>
+                    <div class="button-group">
+                        <a asp-page="./AdminCategoryManager" asp-route-deleteExistingCategoryId="@existingCategory.Id" class="btn btn-link btn-delete">Delete</a>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No categories available.</p>
+    }
+</div>
+
 <br>
-<br>
-<h2>SubCategories</h2>
-@if (Model.SubCategories != null && Model.SubCategories.Count > 0)
-{
-    <ul class="admin-list">
-        @foreach (var existingSubCategory in Model.SubCategories)
-        {
-            <li>
-                @existingSubCategory.Name
-                <a asp-page="./AdminCategoryManager" asp-route-changeExistingSubCategoryId="@existingSubCategory.Id" class="btn btn-link" id="btn-btn-link-edit">Edit</a>
-                <a asp-page="./AdminCategoryManager" asp-route-deleteExistingSubCategoryId="@existingSubCategory.Id" class="btn btn-link"id="btn-btn-link-delete">Delete</a>
-            </li>
-        }
-    </ul>
-}
-else
-{
-    <p>No subcategories available.</p>
-}
 
-<h2>Add or Edit SubCategory</h2>
-<form method="post" asp-page-handler="SubCategory">
-    <div class="form-group">
-        <label asp-for="NewSubCategory.Name" class="control-label"></label>
-        <input asp-for="NewSubCategory.Name" class="form-control" />
-        <span asp-validation-for="NewSubCategory.Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="NewSubCategory.CategoryId" class="control-label"></label>
-        <select asp-for="NewSubCategory.CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" class="form-control"></select>
-        <span asp-validation-for="NewSubCategory.CategoryId" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Save SubCategory" class="btn btn-primary" id="btn-btn-link-save" />
-    </div>
-</form>
+<div class="section">
+    <h2>Add new Subcategory</h2>
+    <form method="post" asp-page-handler="SubCategory" >
+        <div class="form-group">
+            <label asp-for="NewSubCategory.Name" class="control-label"></label>
+            <input asp-for="NewSubCategory.Name" class="form-control" />
+            <span asp-validation-for="NewSubCategory.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="NewSubCategory.CategoryId" class="control-label"> Category</label>
+            <select asp-for="NewSubCategory.CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" class="form-control"></select>
+            <span asp-validation-for="NewSubCategory.CategoryId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save SubCategory" class="btn btn-primary btn-save" />
+        </div>
+    </form>
+
+    <h2>Existing Subcategories</h2>
+    @if (Model.SubCategories != null && Model.SubCategories.Count > 0)
+    {
+        <ul class="admin-list">
+            @foreach (var existingSubCategory in Model.SubCategories)
+            {
+                <li class="admin-list-item">
+                    <span class="subcategory-name">@existingSubCategory.Name</span>
+                    <div class="button-group">
+                        <a asp-page="./AdminCategoryManager" asp-route-deleteExistingSubCategoryId="@existingSubCategory.Id" class="btn btn-link btn-delete">Delete</a>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No subcategories available.</p>
+    }
+</div>

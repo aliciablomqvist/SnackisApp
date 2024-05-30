@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fXf7/FU2secFA5XP9vWCCPotTt34DTN8d3VXGI4mbZo=",
+  "Hash": "6ZNgFXR3kHyzFl2aQukohXAg6Vd5UqxrdhUcuo8cYvk=",
   "Source": "SnackisApp",
   "BasePath": "_content/SnackisApp",
   "Mode": "Default",
@@ -1214,6 +1214,25 @@
       "OriginalItemSpec": "wwwroot/css/admin.css"
     },
     {
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/categoryadmin.css",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "css/categoryadmin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/categoryadmin.css"
+    },
+    {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",
       "SourceId": "SnackisApp",
       "SourceType": "Discovered",
@@ -1326,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/subcategory.css"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/testadmin.css",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "css/testadmin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/testadmin.css"
     },
     {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/favicon.ico",

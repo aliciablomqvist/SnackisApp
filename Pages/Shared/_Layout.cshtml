@@ -1,5 +1,6 @@
 ﻿@using Microsoft.EntityFrameworkCore
 @using SnackisApp.Data
+@using System.Security.Claims
 @inject ApplicationDbContext _context
 @using Microsoft.AspNetCore.Identity
 @using SnackisApp.Models
@@ -93,6 +94,18 @@
                                 <i class="fas fa-envelope nav-icon"></i>
                             </a>
                         </li>
+
+
+
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/UserInfo" asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">My Profile</a>
+    </li>
+        <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/EditUserInfo" asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">Edit my Profile</a>
+    </li>
+
+
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/ProfilePage">

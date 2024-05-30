@@ -1,0 +1,26 @@
+@page
+@model SnackisApp.Pages.EditUserInfoModel
+@{
+    ViewData["Title"] = "Edit User Info";
+}
+
+<h2>Edit Your Profile</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Input.Pseudonym"></label>
+        <input asp-for="Input.Pseudonym" class="form-control" />
+        <span asp-validation-for="Input.Pseudonym" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Bio"></label>
+        <textarea asp-for="Input.Bio" class="form-control"></textarea>
+        <span asp-validation-for="Input.Bio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.ProfileImage"></label>
+        <input asp-for="Input.ProfileImage" type="file" class="form-control" />
+        <span asp-validation-for="Input.ProfileImage" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

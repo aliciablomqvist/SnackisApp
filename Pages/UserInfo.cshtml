@@ -1,0 +1,33 @@
+@page "{userId}"
+@model SnackisApp.Pages.UserInfoModel
+@{
+    ViewData["Title"] = "User Info";
+}
+
+<div class="user-info">
+    <h2>@Model.User.Pseudonym's Profile</h2>
+    <img src="@Model.User.ProfileImageUrl" alt="Profile image" class="profile-image" />
+    <p><strong>Username:</strong> @Model.User.Pseudonym</p>
+    <p><strong>Email:</strong> @Model.User.UserName</p>
+    <p><strong>Bio:</strong> @Model.User.Bio</p>
+</div>
+
+<style>
+    .user-info {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+</style>

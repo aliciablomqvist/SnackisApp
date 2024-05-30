@@ -24,5 +24,7 @@ public class Post
 
         [ForeignKey("SubCategoryId")]
         public SubCategory SubCategory { get; set; }
+
+        public ICollection<Reaction> Reactions { get; set; }
 }
 }

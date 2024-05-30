@@ -21,6 +21,7 @@ builder.Services.AddDefaultIdentity<SnackisUser>(options => options.SignIn.Requi
 
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddControllers(); 
 
     builder.Services.AddHttpClient<DiscussionService>();
          builder.Services.AddHttpClient<DailyphilosopherService>();
@@ -71,7 +72,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+app.MapControllers(); // Ensure this is added to map API controllers
 
 
 

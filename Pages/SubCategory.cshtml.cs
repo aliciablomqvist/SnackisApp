@@ -34,6 +34,7 @@ namespace SnackisApp.Pages
             .Include(sc => sc.Category)
             .FirstOrDefaultAsync(sc => sc.Id == id);
 
+             
         if (SubCategory == null)
         {
             return NotFound();
@@ -55,8 +56,9 @@ namespace SnackisApp.Pages
         }
 
         Posts = await _context.Post
-            .Include(p => p.User) // Include user to get the profile image URL
+            .Include(p => p.User)
             .Where(p => p.SubCategoryId == id)
+            .OrderByDescending(p => p.Date)
             .ToListAsync();
 
         return Page();

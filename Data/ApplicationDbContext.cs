@@ -22,6 +22,8 @@ public class ApplicationDbContext : IdentityDbContext<SnackisUser>
 
      public DbSet<Philosopher> Philosopher { get; set; }
 
+      public DbSet<Reaction> Reactions { get; set; }
+
 
  protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

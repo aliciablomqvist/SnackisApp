@@ -6,8 +6,8 @@
 
 <head>
     <link rel="stylesheet" href="~/css/post.css" asp-append-version="true" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <h2 class="post-title">@Model.Post.Title</h2>
@@ -22,28 +22,45 @@
 
 <div class="post-content">
     <form method="post" asp-page-handler="Report" class="report-post-form">
-    <input type="hidden" name="postId" value="@Model.Post.Id" />
-    <input type="hidden" name="reportedById" value="@User.Identity?.Name" />
-   <button type="submit" class="btn btn-danger" title="Report Post">
-        <i class="fas fa-flag"></i>
-    </button>
-</form>
-        @if (!string.IsNullOrEmpty(Model.Post.Image))
+        <input type="hidden" name="postId" value="@Model.Post.Id" />
+        <input type="hidden" name="reportedById" value="@User.Identity?.Name" />
+        <button type="submit" class="btn btn-danger" title="Report Post">
+            <i class="fas fa-flag"></i>
+        </button>
+    </form>
+    @if (!string.IsNullOrEmpty(Model.Post.Image))
     {
         <img class="post-image" src="/userImages/@Model.Post.Image" alt="Post image" />
     }
     <p>@Model.Post.Content</p>
 
+    <div class="reactions">
+        @foreach (var reaction in Model.Reactions)
+        {
+            <div class="reaction-text">
+                Reaction Type: @reaction.ReactionType
+            </div>
+        }
+
+        <button class="reaction-button" data-reaction="thumbs-up" data-post-id="@Model.Post.Id">
+            <i class="fas fa-thumbs-up"></i>
+            <span>@Model.Reactions.Count(r => r.ReactionType == "thumbs-up")</span>
+        </button>
+        <button class="reaction-button" data-reaction="heart" data-post-id="@Model.Post.Id">
+            <i class="fas fa-heart"></i>
+            <span>@Model.Reactions.Count(r => r.ReactionType == "heart")</span>
+        </button>
+    </div>
 </div>
 
 <h3 class="comments-title">Comments</h3>
 @if (Model.Comments != null && Model.Comments.Count > 0)
 {
     <ul class="comments-list">
-    @foreach (var comment in Model.Comments)
-    {
-        @Html.Partial("_CommentPartial", comment)
-    }
+        @foreach (var comment in Model.Comments)
+        {
+            @Html.Partial("_CommentPartial", comment)
+        }
     </ul>
 }
 else
@@ -61,10 +78,10 @@ else
 {
     <div class="alert alert-danger">
         <ul>
-        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-        {
-            <li>@error.ErrorMessage</li>
-        }
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
         </ul>
     </div>
 }
@@ -80,6 +97,36 @@ else
             }
         }
     </script>
+    <script>
+        $(document).ready(function() {
+            $('.reaction-button').click(function(event) {
+                event.preventDefault(); // Prevent default action
+
+                var button = $(this);
+                var postId = button.data('post-id');
+                var reactionType = button.data('reaction');
+
+                $.ajax({
+                    url: '/api/reactions',
+                    method: 'POST',
+                    data: {
+                        postId: postId,
+                        reactionType: reactionType
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            var countSpan = button.find('span');
+                            var currentCount = parseInt(countSpan.text());
+                            countSpan.text(currentCount + 1);
+                        } else {
+                            alert('Failed to add reaction');
+                        }
+                    },
+                    error: function() {
+                        alert('Error adding reaction');
+                    }
+                });
+            });
+        });
+    </script>
 }
-
-

@@ -5,16 +5,16 @@
       "PackagePath": "staticwebassets/SnackisApp.bundle.scp.css"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/admin.css",
-      "PackagePath": "staticwebassets/css/admin.css"
-    },
-    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/categoryadmin.css",
       "PackagePath": "staticwebassets/css/categoryadmin.css"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",
       "PackagePath": "staticwebassets/css/index.css"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/indexadmin.css",
+      "PackagePath": "staticwebassets/css/indexadmin.css"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/messages.css",
@@ -29,16 +29,16 @@
       "PackagePath": "staticwebassets/css/profile.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/reportadmin.css",
+      "PackagePath": "staticwebassets/css/reportadmin.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/subcategory.css",
       "PackagePath": "staticwebassets/css/subcategory.css"
-    },
-    {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/testadmin.css",
-      "PackagePath": "staticwebassets/css/testadmin.css"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/favicon.ico",
@@ -343,6 +343,10 @@
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/73404cutemessages.jpg",
       "PackagePath": "staticwebassets/userImages/73404cutemessages.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/85227iconyoga.png",
+      "PackagePath": "staticwebassets/userImages/85227iconyoga.png"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",

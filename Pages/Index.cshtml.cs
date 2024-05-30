@@ -28,6 +28,7 @@ namespace SnackisApp.Pages
         public async Task OnGetAsync()
         {
             Discussions = await _discussionService.GetDiscussionsAsync();
+              Discussions = Discussions.OrderByDescending(d => d.Date).ToList();
 
             Dailyphilosophers = await _dailyphilosopherService.GetDailyphilosophersAsync();
             if (Dailyphilosophers != null && Dailyphilosophers.Count > 0)

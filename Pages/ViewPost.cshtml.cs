@@ -25,7 +25,7 @@ namespace SnackisApp.Pages
 
     public Post Post { get; set; }
     public List<Comment> Comments { get; set; }
-    public List<Reaction> Reactions { get; set; } // Add this line
+    public List<Reaction> Reactions { get; set; } 
 
     [BindProperty]
     public Comment NewComment { get; set; }
@@ -47,10 +47,13 @@ namespace SnackisApp.Pages
             return NotFound();
         }
 
-        Comments = await _context.Comment
-            .Include(c => c.Replies)
-            .Where(c => c.PostId == id && c.ParentCommentId == null)
-            .ToListAsync();
+     // Fetch all comments for the post
+            var allComments = await _context.Comment
+                .Where(c => c.PostId == id)
+                .ToListAsync();
+
+            // Organize comments into a hierarchy
+            Comments = BuildCommentHierarchy(allComments);
 
         Reactions = Post.Reactions.ToList(); // Populate Reactions list
         UserName = Post.User.UserName;
@@ -85,11 +88,11 @@ namespace SnackisApp.Pages
 
         if (!ModelState.IsValid)
         {
-            Comments = await _context.Comment
-                .Include(c => c.Replies)
-                .Where(c => c.PostId == id && c.ParentCommentId == null)
-                .ToListAsync();
-            return Page();
+      var allComments = await _context.Comment
+                    .Where(c => c.PostId == id)
+                    .ToListAsync();
+                Comments = BuildCommentHierarchy(allComments);
+                return Page();
         }
 
         _context.Comment.Add(NewComment);
@@ -97,6 +100,34 @@ namespace SnackisApp.Pages
 
         return RedirectToPage(new { id = id });
     }
+
+    private List<Comment> BuildCommentHierarchy(List<Comment> allComments)
+        {
+            var commentDict = allComments.ToDictionary(c => c.Id);
+            var rootComments = new List<Comment>();
+
+            foreach (var comment in allComments)
+            {
+                if (comment.ParentCommentId == null)
+                {
+                    rootComments.Add(comment);
+                }
+                else
+                {
+                    if (commentDict.ContainsKey((int)comment.ParentCommentId))
+                    {
+                        var parentComment = commentDict[(int)comment.ParentCommentId];
+                        if (parentComment.Replies == null)
+                        {
+                            parentComment.Replies = new List<Comment>();
+                        }
+                        parentComment.Replies.Add(comment);
+                    }
+                }
+            }
+
+            return rootComments;
+        }
 
     public async Task<IActionResult> OnPostReportAsync(int postId, string reportedById)
     {

@@ -161,7 +161,7 @@ namespace SnackisApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Comment", b =>
@@ -190,7 +190,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comment", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Group", b =>
@@ -211,7 +211,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("CreatorId");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.GroupInvitation", b =>
@@ -241,7 +241,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("InvitingUserId");
 
-                    b.ToTable("GroupInvitations");
+                    b.ToTable("GroupInvitations", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.GroupMember", b =>
@@ -256,7 +256,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("GroupMembers");
+                    b.ToTable("GroupMembers", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.GroupMessage", b =>
@@ -285,7 +285,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("GroupMessages");
+                    b.ToTable("GroupMessages", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Message", b =>
@@ -316,7 +316,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("Message");
+                    b.ToTable("Message", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Philosopher", b =>
@@ -335,7 +335,7 @@ namespace SnackisApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Philosopher");
+                    b.ToTable("Philosopher", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Post", b =>
@@ -377,7 +377,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Post");
+                    b.ToTable("Post", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Reaction", b =>
@@ -406,7 +406,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("ReactedbyId");
 
-                    b.ToTable("Reactions");
+                    b.ToTable("Reactions", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.Report", b =>
@@ -441,7 +441,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("ReportedById");
 
-                    b.ToTable("Reports");
+                    b.ToTable("Reports", (string)null);
                 });
 
             modelBuilder.Entity("SnackisApp.Models.SnackisUser", b =>
@@ -537,7 +537,7 @@ namespace SnackisApp.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("SubCategory");
+                    b.ToTable("SubCategory", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

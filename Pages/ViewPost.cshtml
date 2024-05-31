@@ -54,6 +54,7 @@
     </div>
 </div>
 
+
 <h3 class="comments-title">Comments</h3>
 @if (Model.Comments != null && Model.Comments.Count > 0)
 {
@@ -69,9 +70,10 @@ else
     <p class="no-comments">No comments yet.</p>
 }
 
+<h3 class="add-comment-title">Add a Comment</h3>
 <form method="post" class="add-comment-form">
-    <input type="hidden" name="ParentCommentId" value="" />
-    <textarea name="NewCommentContent" class="form-control" cols="20" rows="4"></textarea>
+    <input type="hidden" name="ParentCommentId" id="ParentCommentId" value="" />
+    <textarea name="NewCommentContent" class="form-control" cols="40" rows="5"></textarea>
     <button type="submit" class="btn btn-success">Add Comment</button>
 </form>
 
@@ -89,14 +91,18 @@ else
 
 @section Scripts {
     <script>
-        function toggleReplyForm(commentId) {
-            var form = document.getElementById('reply-form-' + commentId);
-            if (form.style.display === 'none') {
-                form.style.display = 'block';
-            } else {
-                form.style.display = 'none';
-            }
-        }
+        $(document).ready(function() {
+            console.log("Document is ready");
+            $('.reply-button').click(function(event) {
+                event.preventDefault();
+                var commentId = $(this).data('comment-id');
+                console.log("Reply button clicked for comment ID:", commentId);
+                $('#ParentCommentId').val(commentId);
+                $('html, body').animate({
+                    scrollTop: $(".add-comment-form").offset().top
+                }, 1000);
+            });
+        });
     </script>
     <script>
         $(document).ready(function() {

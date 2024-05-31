@@ -20,8 +20,7 @@ namespace SnackisApp.Models
 
         [Required]
         public DateTime Date { get; set; }
-
-
+        
         //Replies
         public int? ParentCommentId { get; set; }
 

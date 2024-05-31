@@ -4,7 +4,7 @@ using SnackisApp.Data;
 using SnackisApp.Models;
 using System.Threading.Tasks;
 
-namespace SnackisApp.Controllers
+namespace SnackisApp.Helpers
 {
     [ApiController]
     [Route("api/[controller]")]

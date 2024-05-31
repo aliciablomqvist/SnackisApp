@@ -19,16 +19,14 @@
             <div class="StartDiv">
                 <h2>Welcome to Mindful Movement!</h2>
                 <p>
-                    Mindful Movement is a serene space for enthusiasts of yoga, body wellness, meditation, mindfulness, and holistic living.
+                    Mindful Movement is a serene space for enthusiasts of yoga, body wellness, meditation, mindfulness, and
+                    holistic living.
                 </p>
                 <p>
                     Navigate our forum by choosing a category from the menu above or create your own post!
                 </p>
-                <ul class="horizontal-list">
-                    <li>
-                        <a class="create-post-button" asp-area="" asp-page="/CreatePost">Create New Post</a>
-                    </li>
-                </ul>
+                <h2>Join online now!</h2>
+                <img src="/siteImages/yogaadvert.webp" alt="Yoga advert" class="yoga-ad-img">
             </div>
         }
         else
@@ -39,10 +37,12 @@
                     Log in to your account to post on Mindful Movement. Click the log in button in the menu!
                 </p>
                 <p>
-                    If you do not have an account, register by clicking the register button in the menu and join our mindful community!
+                    If you do not have an account, register by clicking the register button in the menu and join our mindful
+                    community!
                 </p>
                 <p>
-                    You can still read our posts. Navigate our forum by choosing a category from the menu above. Our categories include:
+                    You can still read our posts. Navigate our forum by choosing a category from the menu above. Our
+                    categories include:
                 </p>
                 <ul class="horizontal-list">
                     <li>Yoga</li>
@@ -56,30 +56,31 @@
     </div>
 
     <div class="main-content">
-       <h2>Our latest discussions</h2>
+        <h2>Our latest discussions</h2>
 
-@if (Model.Discussions != null && Model.Discussions.Count > 0)
-{
-    <ul class="discussion-list">
-    @foreach (var discussion in Model.Discussions)
-    {
-        <li class="discussion-item">
-            <div class="discussion-header">
-                <img src="@discussion.User.ProfileImageUrl" alt="Profile image" class="profile-image" />
-                <div>
-                    <strong><a asp-page="/ViewPost" asp-route-id="@discussion.Id">@discussion.Title </a></strong>
-                    <div class="discussion-meta">by @discussion.User.UserName on @discussion.Date.ToString("g")</div>
-                </div>
-            </div>
-            <p class="discussion-content">@discussion.Content</p>
-        </li>
-    }
-    </ul>
-}
-else
-{
-    <p>No discussions available.</p>
-}
+        @if (Model.Discussions != null && Model.Discussions.Count > 0)
+        {
+            <ul class="discussion-list">
+                @foreach (var discussion in Model.Discussions)
+                {
+                    <li class="discussion-item">
+                        <div class="discussion-header">
+                            <img src="@discussion.User.ProfileImageUrl" alt="Profile image" class="profile-image" />
+                            <div>
+                                <strong><a asp-page="/ViewPost" asp-route-id="@discussion.Id">@discussion.Title </a></strong>
+                                <div class="discussion-meta">by @discussion.User.UserName on @discussion.Date.ToString("g")
+                                </div>
+                            </div>
+                        </div>
+                        <p class="discussion-content">@discussion.Content</p>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No discussions available.</p>
+        }
 
     </div>
 
@@ -94,10 +95,25 @@ else
             {
                 <p>No philosophers available.</p>
             }
-<br>
-<br>
-              <h2>Join online now!</h2>
-         <img src="/siteImages/yogaadvert.webp" alt="Yoga advert" class="yoga-ad-img">
+            <br>
+            <br>
+            <h2>Quick access</h2>
+            <ul class="horizontal-list">
+                <li>
+                    <a class="create-post-button" asp-area="" asp-page="/CreatePost"><i class="fa-solid fa-pen"></i></a>
+                </li>
+                <li>
+                    <a class="create-post-button" asp-area="" asp-page="/Groups/Index"><i
+                            class="fa-solid fa-user-group"></i></a>
+                </li>
+                <li>
+                    <a class="create-post-button" asp-area="" asp-page="/EditUserInfo"
+                        asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+
         </div>
     </div>
 </div>

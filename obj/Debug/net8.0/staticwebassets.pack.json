@@ -289,6 +289,10 @@
       "PackagePath": "staticwebassets/profileImages/c99f91a4-5ec4-40b5-a436-c1be9189999b_cute-profile-picture-19mnx03g9yap3dhy.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/cute-profile-picture-19mnx03g9yap3dhy.jpg",
+      "PackagePath": "staticwebassets/profileImages/cute-profile-picture-19mnx03g9yap3dhy.jpg"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/yogaprofile.png",
       "PackagePath": "staticwebassets/profileImages/yogaprofile.png"
     },

@@ -4,6 +4,10 @@
     ViewData["Title"] = "Edit User Info";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
+</head>
+
 <h2>Edit Your Profile</h2>
 
 <form method="post" enctype="multipart/form-data">
@@ -22,5 +26,5 @@
         <input asp-for="Input.ProfileImage" type="file" class="form-control" />
         <span asp-validation-for="Input.ProfileImage" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="submit" class="save-btn">Save Changes</button>
 </form>

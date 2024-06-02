@@ -7,10 +7,6 @@
     ViewData["Title"] = "Messages";
     var user = await UserManager.GetUserAsync(User);
 }
-
-
-
-
 <head>
     <link rel="stylesheet" href="~/css/messages.css" asp-append-version="true" />
 </head>
@@ -22,7 +18,7 @@
 <h2>Messages</h2>
 
 <div class="message-actions">
-    <a asp-page="/SendMessage" class="btn btn-primary">Write a New Message</a>
+    <a asp-page="/SendMessage" class="message-btn">Write a New Message</a>
 </div>
 
 <h3>Inbox</h3>

@@ -116,7 +116,7 @@ h2, h3 {
     color: #e74c3c;
 }
 
-.btn {
+.message-btn {
     background-color: #7f6988; /* Match the theme color */
     border: none;
     font-weight: bold;
@@ -124,12 +124,14 @@ h2, h3 {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     display: block;
-  
+  color: #f8f6f6;
+  text-decoration: none;
     box-sizing: border-box;
 }
 
-.btn:hover {
+.message-btn:hover {
     background-color: #6b577a; /* Darker shade for hover */
+    color: #e0e0e0;
 }
 
 .alert {

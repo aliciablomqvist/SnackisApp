@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/categoryadmin.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/group.css",
+      "PackagePath": "staticwebassets/css/group.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",
       "PackagePath": "staticwebassets/css/index.css"
     },

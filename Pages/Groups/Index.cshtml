@@ -1,50 +1,18 @@
 @page
 @model SnackisApp.Pages.GroupPageModel
 
-<h1>Groups</h1>
+<h1>Your Groups</h1>
 
-<form method="post" asp-page-handler="CreateGroup">
-    <input type="text" asp-for="GroupName" placeholder="Group Name" required />
-    <button type="submit">Create Group</button>
-</form>
 
-@foreach (var group in Model.Groups)
-{
-    <h2>@group.Name</h2>
-    <p>Members:</p>
-    <ul>
-        @foreach (var member in group.Members)
-        {
-            <li>
-                @member.User.UserName
-                <form method="post" asp-page-handler="RemoveMember">
-                    <input type="hidden" asp-for="GroupId" value="@group.Id" />
-                    <input type="hidden" asp-for="InvitedUserId" value="@member.User.Id" />
-                    <button type="submit">Remove Member</button>
-                </form>
-            </li>
-        }
-    </ul>
-    <form method="post" asp-page-handler="InviteUser">
-        <input type="hidden" asp-for="GroupId" value="@group.Id" />
-        <input type="text" asp-for="InvitedUserId" placeholder="User ID" required />
-        <button type="submit">Invite User</button>
-    </form>
-    <form method="post" asp-page-handler="SendMessage">
-        <input type="hidden" asp-for="GroupId" value="@group.Id" />
-        <textarea asp-for="MessageContent" placeholder="Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-    <h3>Messages:</h3>
-    <ul>
-        @foreach (var message in group.Messages)
-        {
-            <li>@message.User.UserName: @message.Content</li>
-        }
-    </ul>
-}
+<head>
+    <link rel="stylesheet" href="~/css/group.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-<h3>Invitations</h3>
+<body>
+
+    <main class="main">
+        <aside class="aside"> <p>Invitations</p>
 @if (Model.Invitations != null && Model.Invitations.Count > 0)
 {
     <ul>
@@ -63,5 +31,44 @@
 }
 else
 {
-    <p>No invitations available.</p>
+    <p>You don't have any invitations right now.</p>
 }
+      <ul>
+                    <li>
+                    <a class="manage-button" asp-area="" asp-page="/Groups/ManageGroups">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+  </aside>
+
+
+       <div class="content">
+@foreach (var group in Model.Groups)
+{
+        <div class="group-content">
+
+
+    <h3>Messages in @group.Name</h3>
+    <ul>
+            <div class=" box-message-content">
+       
+        @foreach (var message in group.Messages)
+        {
+               <div class="message-content">
+            <li>@message.User.UserName: @message.Content</li>
+            </div>
+        }
+    </ul>
+       <div class="seperator"></div>
+        <form method="post" asp-page-handler="SendMessage">
+        <input type="hidden" asp-for="GroupId" value="@group.Id" />
+        <textarea asp-for="MessageContent" placeholder="Message"required class="write-message"></textarea>
+        <button type="submit" class="btn-send">Send Message</button>
+        
+    </form></div> 
+}
+</div>
+
+    </main>
+</body>

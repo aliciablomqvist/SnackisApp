@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c7AEluxEbvuIRBMYuDIDjBX/GkJfjyPZpcTdMbcwwe4=",
+  "Hash": "8FC/rTK4UK3akIK0kr8uWffBHN4b7yPUr2NZQjwasiw=",
   "Source": "SnackisApp",
   "BasePath": "_content/SnackisApp",
   "Mode": "Default",
@@ -1212,6 +1212,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/categoryadmin.css"
+    },
+    {
+      "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/group.css",
+      "SourceId": "SnackisApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/",
+      "BasePath": "_content/SnackisApp",
+      "RelativePath": "css/group.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/group.css"
     },
     {
       "Identity": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/index.css",

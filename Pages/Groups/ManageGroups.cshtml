@@ -1,61 +1,70 @@
 @page
-@model SnackisApp.Pages.GroupManagerModel
+@model SnackisApp.Pages.Groups.GroupManagerModel
+@using SnackisApp.Models
+@inject UserManager<SnackisUser> UserManager
 
-<h1>Group Manager</h1>
-<head>
-    <link rel="stylesheet" href="~/css/group.css" asp-append-version="true"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-
-
-<div class="group-content">
-<div class="create-section">
-        <div class="create-form-div">
-        <h2>Create Group</h2>
-<form method="post" asp-page-handler="CreateGroup">
-    <input type="text" asp-for="GroupName" placeholder="Group Name" required />
-    <button type="submit" class="group-btn">Create Group</button>
-</form>
-</div>
-</div>
-
-<div class="edit-section">
-           <h2>Edit groups</h2>
-@foreach (var group in Model.Groups)
-{
-        <div class="seperator"></div>
-        
-    <h3>@group.Name</h3>
-  
-    <p>Current members:</p>
-    <ul>
-        @foreach (var member in group.Members)
-        {
-              
-            <li>
-              
-                @member.User.UserName
-                <form method="post" asp-page-handler="RemoveMember">
-                    <input type="hidden" asp-for="GroupId" value="@group.Id" />
-                    <input type="hidden" asp-for="InvitedUserId" value="@member.User.Id" />
-                    <button type="submit"class="group-btn">Remove Member</button>
-                </form>
-            </li>
-             
-        }
-    </ul>
-    <br>
-
-    <div class="form-div">
-  <h5>Invite new members!</h5>
- 
-    <form method="post" asp-page-handler="InviteUser">
-        <input type="hidden" asp-for="GroupId" value="@group.Id" />
-        <input type="text" asp-for="InvitedUserId" placeholder="User ID" required />
-        <button type="submit" class="group-btn">Invite User</button>
-    </form>
-    </div>
+@{
+    ViewData["Title"] = "Group Manager";
+    var currentUser = await UserManager.GetUserAsync(User);
 }
 
-</div>
+<head>
+    <link rel="stylesheet" href="~/css/group.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<div class="group-content">
+    <div class="create-section">
+        <div class="create-form-div">
+            <h2>Create Group</h2>
+            <form method="post" asp-page-handler="CreateGroup">
+                <input type="text" asp-for="GroupName" placeholder="Group Name" required />
+                <button type="submit" class="group-btn">Create Group</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="edit-section">
+        <h2>Edit groups</h2>
+        @foreach (var group in Model.Groups)
+        {
+            <div class="seperator"></div>
+            <h3>@group.Name</h3>
+            @if (group.CreatorId == Model.CurrentUserId)
+            {
+                <div class="parent-container">
+                <form  method="post" asp-page-handler="DeleteGroup" style="display:inline;">
+                    <input type="hidden" name="GroupId" value="@group.Id" />
+                    <button type="submit" class="group-btn btn-danger">Delete Group</button>
+                </form>
+                </div>
+            }
+            <p>Current members:</p>
+            <ul>
+                @foreach (var member in group.Members)
+                {
+                    <li>
+                        @member.User.UserName
+                        @if (group.CreatorId == Model.CurrentUserId)
+                        {
+                            <form method="post" asp-page-handler="RemoveMember" style="display:inline;">
+                                <input type="hidden" name="GroupId" value="@group.Id" />
+                                <input type="hidden" name="InvitedUserId" value="@member.User.Id" />
+                                <button type="submit" class="remove-btn">Remove Member</button>
+                            </form>
+                        }
+                    </li>
+                }
+            </ul>
+            <br>
+            <div class="form-div">
+                <h5>Invite new members!</h5>
+                <form method="post" asp-page-handler="InviteUser">
+                    <input type="hidden" name="GroupId" value="@group.Id" />
+                    <input type="text" name="InvitedUserId" placeholder="User ID" required />
+                    <button type="submit" class="group-btn">Invite User</button>
+                </form>
+            </div>
+        }
+    </div>
 </div>

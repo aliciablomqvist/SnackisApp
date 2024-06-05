@@ -117,7 +117,7 @@ h2, h3 {
 }
 
 .message-btn {
-    background-color: #7f6988; /* Match the theme color */
+    background-color: #7f6988;
     border: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -130,7 +130,7 @@ h2, h3 {
 }
 
 .message-btn:hover {
-    background-color: #6b577a; /* Darker shade for hover */
+    background-color: #6b577a;
     color: #e0e0e0;
 }
 
@@ -142,4 +142,38 @@ h2, h3 {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+.message-nav {
+    margin-bottom: 20px;
+}
+
+.message-nav .btn {
+    margin-right: 10px;
+    border: none;
+    background-color: #6d6072;
+}
+
+.btn-sent, .btn-inbox, .btn-send-message{
+    background-color: #bfa9c7;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  color: #f8f6f6;
+  text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-sent, .btn-inbox,.btn-send-message :hover{
+
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  color: #f8f6f6;
+  text-decoration: none;
+    box-sizing: border-box;
 }

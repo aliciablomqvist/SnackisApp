@@ -1,6 +1,13 @@
 @page
 @model AdminPageModel
+@using SnackisApp.Models
+@inject UserManager<SnackisUser> UserManager
+@inject SignInManager<SnackisUser> SignInManager
+
 @{
+    ViewData["Title"] = "Admin Page";
+    var currentUser = await UserManager.GetUserAsync(User);
+    var isAdmin = await UserManager.IsInRoleAsync(currentUser, "Admin");
 }
 <head>
     <link rel="stylesheet" href="~/css/indexadmin.css" asp-append-version="true" />
@@ -10,29 +17,38 @@
 <body>
 
     <main class="main">
-        <aside class="aside"> <p>Current users</p>
-    
-            <ul class="admin-list">
-                @foreach (var user in Model.Users)
-                {
-                    <li class="admin-aside-content">
-                        @user.UserName
+       @if (SignInManager.IsSignedIn(User))
+{
+    <aside class="aside">
+        <p>Current users</p>
+
+        <ul class="admin-list">
+            @foreach (var user in Model.Users)
+            {
+                <li class="admin-aside-content">
+                    @user.UserName
+
+                    @if (Model.UserRoles[user.Id].Contains("Admin"))
+                    {
+                        <form method="get" style="display:inline;">
+                            <input type="hidden" name="RemoveUserId" value="@user.Id" />
+                            <input type="hidden" name="RoleName" value="Admin" />
+                            <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
+                        </form>
+                    }
+                    else
+                    {
                         <form method="get" style="display:inline;">
                             <input type="hidden" name="AddUserId" value="@user.Id" />
                             <input type="hidden" name="RoleName" value="Admin" />
                             <button type="submit" class="btn btn-success btn-sm"> Add </button>
                         </form>
-                            <form method="get" style="display:inline;">
-                                <input type="hidden" name="RemoveUserId" value="@user.Id" />
-                                <input type="hidden" name="RoleName" value="Admin" />
-                                <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
-                            </form>
-                       
-                    </li>
-                }
-            </ul>
-            </aside>
-
+                    }
+                </li>
+            }
+        </ul>
+    </aside>
+}
 
         <div class="content">
                 <h3>Admin Page</h3>

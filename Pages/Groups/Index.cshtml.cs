@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SnackisApp.Pages
+namespace SnackisApp.Pages.Groups
 {
     [Authorize]
     public class GroupPageModel : PageModel

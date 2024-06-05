@@ -41,16 +41,8 @@
                     community!
                 </p>
                 <p>
-                    You can still read our posts. Navigate our forum by choosing a category from the menu above. Our
-                    categories include:
+                    You can still read our posts. Navigate our forum by choosing a category from the menu above.
                 </p>
-                <ul class="horizontal-list">
-                    <li>Yoga</li>
-                    <li>Meditation</li>
-                    <li>Mindfulness</li>
-                    <li>Lifestyle</li>
-                    <li>Community</li>
-                </ul>
             </div>
         }
     </div>
@@ -85,6 +77,8 @@
     </div>
 
     <div class="sidebar-right">
+                @if (SignInManager.IsSignedIn(User))
+        {
         <div class="StartDiv philosopher-div">
             <h2>Quote of the Day</h2>
             @if (Model.RandomPhilosopher != null)
@@ -115,5 +109,20 @@
             </ul>
 
         </div>
+         }
+        else
+        {
+            <div class="StartDiv">
+                <h2>By logging in you gain access to: </h2>
+                <ul class="horizontal-list">
+                    <li>Creating your own posts</li>
+                    <li>Interacting with others</li>
+                    <li>Creating group chats</li>
+                    <li>Personify your profile</li>
+                    <li>More fun!</li>
+                </ul>
+            </div>
+        }
+    </div>
     </div>
 </div>

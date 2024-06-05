@@ -301,6 +301,10 @@
       "PackagePath": "staticwebassets/profileImages/cute-profile-picture-19mnx03g9yap3dhy.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
+      "PackagePath": "staticwebassets/profileImages/depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/yogaprofile.png",
       "PackagePath": "staticwebassets/profileImages/yogaprofile.png"
     },
@@ -337,6 +341,10 @@
       "PackagePath": "staticwebassets/siteImages/yogaadvert.webp"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/13335iconyoga.png",
+      "PackagePath": "staticwebassets/userImages/13335iconyoga.png"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/21227download.jpg",
       "PackagePath": "staticwebassets/userImages/21227download.jpg"
     },
@@ -363,6 +371,10 @@
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/65460download.jpg",
       "PackagePath": "staticwebassets/userImages/65460download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/70235yoga-profile.png",
+      "PackagePath": "staticwebassets/userImages/70235yoga-profile.png"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",

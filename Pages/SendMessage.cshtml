@@ -28,7 +28,7 @@
         <span asp-validation-for="Message.Content" class="text-danger"></span>
     </div>
     <input type="hidden" asp-for="Message.SenderId" />
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-send-message">Send</button>
 </form>
 
 @if (!ViewData.ModelState.IsValid)

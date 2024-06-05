@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SnackisApp.Pages
+namespace SnackisApp.Pages.Groups
 {
     [Authorize]
     public class GroupManagerModel : PageModel
@@ -26,12 +26,16 @@ namespace SnackisApp.Pages
 
         public IList<Group> Groups { get; set; }
         public IList<GroupInvitation> Invitations { get; set; }
+        public string CurrentUserId { get; set; }
 
         [BindProperty]
         public string GroupName { get; set; }
 
         [BindProperty]
         public int GroupId { get; set; }
+
+        [BindProperty]
+        public string InvitedUserName { get; set; }
 
         [BindProperty]
         public string InvitedUserId { get; set; }
@@ -42,6 +46,7 @@ namespace SnackisApp.Pages
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await _userManager.GetUserAsync(User);
+            CurrentUserId = user.Id;
             Groups = await _context.Groups
                 .Include(g => g.Members)
                     .ThenInclude(m => m.User)
@@ -73,7 +78,7 @@ namespace SnackisApp.Pages
             return RedirectToPage();
         }
 
-        public async Task<IActionResult> OnPostInviteUserAsync()
+       public async Task<IActionResult> OnPostInviteUserAsync()
         {
             var invitingUser = await _userManager.GetUserAsync(User);
             var invitation = new GroupInvitation
@@ -88,7 +93,7 @@ namespace SnackisApp.Pages
             await _context.SaveChangesAsync();
             return RedirectToPage();
         }
-
+        
         public async Task<IActionResult> OnPostSendMessageAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -116,6 +121,18 @@ namespace SnackisApp.Pages
                     _context.GroupMembers.Remove(member);
                     await _context.SaveChangesAsync();
                 }
+            }
+            return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnPostDeleteGroupAsync()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var group = await _context.Groups.Include(g => g.Creator).FirstOrDefaultAsync(g => g.Id == GroupId);
+            if (group != null && group.CreatorId == user.Id)
+            {
+                _context.Groups.Remove(group);
+                await _context.SaveChangesAsync();
             }
             return RedirectToPage();
         }

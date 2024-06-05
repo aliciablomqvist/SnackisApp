@@ -133,14 +133,16 @@ background-color: #b5b0c2;
 }
 .message-content {
     list-style-type: none;
-    padding: 0;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     margin-top: 30px; 
     border-radius: 10px;
     width: 40%; 
-    padding: 5px;
     margin-bottom: 10px;
     text-align: center; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -153,6 +155,19 @@ background-color: #b5b0c2;
 .message-content:hover {
     transform: translateY(-5px);
     background-color: #f0e6f5; 
+}
+
+
+.own-message {
+    align-self: flex-end;
+    background-color: #d1e7dd; /* Light green background for own messages */
+    text-align: right;
+}
+
+.other-message {
+    align-self: flex-start;
+    background-color: #e4dee7; /* Light red background for other messages */
+    text-align: left;
 }
 
 .form-group {
@@ -253,4 +268,41 @@ background-color: #b5b0c2;
     margin: 10px;
     vertical-align: middle;
     border-radius: 10%;
+}
+
+.parent-container {
+    position: relative;
+}
+
+.btn-danger{
+    background-color: #b2a7c2;
+    color: #fff;
+    padding: 5px 10px; 
+    font-size: 0.875em;
+    border: 1px solid #7f6988; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    position: absolute; 
+    top: 390px;
+}
+
+.btn-danger:hover {
+    background-color: #9e8bab; 
+    border-color: #6b577a; 
+}
+
+
+.btn-remove {
+    background-color: #f5b7b1; 
+    color: #fff;
+    padding: 5px 10px; 
+    font-size: 0.875em; 
+    border: 1px solid #e74c3c; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.btn-remove:hover {
+    background-color: #e6a1a1; 
+    border-color: #c0392b; 
 }

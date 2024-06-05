@@ -1,5 +1,12 @@
 @page
-@model SnackisApp.Pages.GroupPageModel
+@model SnackisApp.Pages.Groups.GroupPageModel
+@using SnackisApp.Models
+@inject UserManager<SnackisUser> UserManager
+
+    @{
+    ViewData["Title"] = "Messages";
+    var currentUser = await UserManager.GetUserAsync(User);
+}
 
 <h1>Groups</h1>
 
@@ -54,16 +61,16 @@ else
 
 
     <h3>Messages in @group.Name</h3>
-    <ul>
-            <div class=" box-message-content">
-       
+<ul>
+    <div class="box-message-content">
         @foreach (var message in group.Messages)
         {
-               <div class="message-content">
-            <li>@message.User.UserName: @message.Content</li>
+            <div class="message-content @(message.User.Id == currentUser.Id ? "own-message" : "other-message")">
+                <li>@message.User.UserName: @message.Content</li>
             </div>
         }
-    </ul>
+    </div>
+</ul>
        <div class="seperator"></div>
         <form method="post" asp-page-handler="SendMessage">
         <input type="hidden" asp-for="GroupId" value="@group.Id" />

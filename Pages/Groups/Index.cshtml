@@ -1,7 +1,7 @@
 @page
 @model SnackisApp.Pages.GroupPageModel
 
-<h1>Your Groups</h1>
+<h1>Groups</h1>
 
 
 <head>
@@ -12,7 +12,8 @@
 <body>
 
     <main class="main">
-        <aside class="aside"> <p>Invitations</p>
+         
+        <aside class="aside">     <img src="/siteImages/community.png" alt="Community icon" class="community-img"> <div class="seperator"></div> <h5>Invitations</h5>
 @if (Model.Invitations != null && Model.Invitations.Count > 0)
 {
     <ul>
@@ -23,7 +24,7 @@
                 <form method="post" asp-page-handler="AcceptInvitation">
                     <input type="hidden" name="groupId" value="@invitation.GroupId" />
                     <input type="hidden" name="invitedUserId" value="@invitation.InvitedUserId" />
-                    <button type="submit">Accept Invitation</button>
+                    <button type="submit" class="group-btn">Accept Invitation</button>
                 </form>
             </li>
         }
@@ -33,13 +34,16 @@ else
 {
     <p>You don't have any invitations right now.</p>
 }
+   <div class="seperator"></div>
+<h5>Manage your groups</h5>
       <ul>
-                    <li>
-                    <a class="manage-button" asp-area="" asp-page="/Groups/ManageGroups">
-                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    <li class="sidebar-li">
+                    <a class="group-btn" asp-area="" asp-page="/Groups/ManageGroups">
+                       Group Manager
                     </a>
                 </li>
             </ul>
+              <div class="seperator"></div>
   </aside>
 
 

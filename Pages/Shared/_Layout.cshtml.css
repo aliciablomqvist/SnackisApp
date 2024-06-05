@@ -58,9 +58,9 @@ button.accept-policy {
 }
 
 .nav-icon {
-  font-size: 24px; /* Adjust the size as needed */
-  color: #7f6988; /* Ensure it matches your color scheme */
-  vertical-align: middle; /* Align with the text */
-  margin-top: -4px; /* Adjust to vertically align with text if necessary */
+  font-size: 24px;
+  color: #7f6988; 
+  vertical-align: middle;
+  margin-top: -4px; 
 
 }

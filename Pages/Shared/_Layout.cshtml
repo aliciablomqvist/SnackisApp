@@ -126,8 +126,16 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - Mindful Movement - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            
         </div>
     </footer>
+
+                          <div class="container">
+        <partial name="_CookiesConsentPartial" />
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

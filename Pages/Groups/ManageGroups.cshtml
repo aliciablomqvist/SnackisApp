@@ -8,35 +8,54 @@
 </head>
 
 
- <h2>Create Group</h2>
-        <h3>Create Group</h3>
+<div class="group-content">
+<div class="create-section">
+        <div class="create-form-div">
+        <h2>Create Group</h2>
 <form method="post" asp-page-handler="CreateGroup">
     <input type="text" asp-for="GroupName" placeholder="Group Name" required />
-    <button type="submit">Create Group</button>
+    <button type="submit" class="group-btn">Create Group</button>
 </form>
+</div>
+</div>
 
+<div class="edit-section">
            <h2>Edit groups</h2>
 @foreach (var group in Model.Groups)
 {
+        <div class="seperator"></div>
+        
     <h3>@group.Name</h3>
-    <p>Members:</p>
+  
+    <p>Current members:</p>
     <ul>
         @foreach (var member in group.Members)
         {
+              
             <li>
+              
                 @member.User.UserName
                 <form method="post" asp-page-handler="RemoveMember">
                     <input type="hidden" asp-for="GroupId" value="@group.Id" />
                     <input type="hidden" asp-for="InvitedUserId" value="@member.User.Id" />
-                    <button type="submit">Remove Member</button>
+                    <button type="submit"class="group-btn">Remove Member</button>
                 </form>
             </li>
+             
         }
     </ul>
+    <br>
 
+    <div class="form-div">
+  <h5>Invite new members!</h5>
+ 
     <form method="post" asp-page-handler="InviteUser">
         <input type="hidden" asp-for="GroupId" value="@group.Id" />
         <input type="text" asp-for="InvitedUserId" placeholder="User ID" required />
-        <button type="submit">Invite User</button>
+        <button type="submit" class="group-btn">Invite User</button>
     </form>
+    </div>
 }
+
+</div>
+</div>

@@ -94,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/CookiesPolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29va2llc1BvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/CreateComment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlQ29tbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -136,6 +140,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/SendMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VuZE1lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Shared/_CookiesConsentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19Db29raWVzQ29uc2VudFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/Pages/Shared/_LoginPartial.cshtml]

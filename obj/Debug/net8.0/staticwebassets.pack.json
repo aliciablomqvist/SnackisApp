@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/categoryadmin.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/cookies.css",
+      "PackagePath": "staticwebassets/css/cookies.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/group.css",
       "PackagePath": "staticwebassets/css/group.css"
     },
@@ -305,6 +309,14 @@
       "PackagePath": "staticwebassets/siteImages/background.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/community.png",
+      "PackagePath": "staticwebassets/siteImages/community.png"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/cookie.png",
+      "PackagePath": "staticwebassets/siteImages/cookie.png"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/siteImages/iconyoga.png",
       "PackagePath": "staticwebassets/siteImages/iconyoga.png"
     },
@@ -337,12 +349,12 @@
       "PackagePath": "staticwebassets/userImages/338download.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/39225international-yoga-day-iphone-background-ktos7.webp",
-      "PackagePath": "staticwebassets/userImages/39225international-yoga-day-iphone-background-ktos7.webp"
-    },
-    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/43536download.jpg",
       "PackagePath": "staticwebassets/userImages/43536download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/518387ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp",
+      "PackagePath": "staticwebassets/userImages/518387ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/60767download.jpg",
@@ -353,20 +365,8 @@
       "PackagePath": "staticwebassets/userImages/65460download.jpg"
     },
     {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/73404cutemessages.jpg",
-      "PackagePath": "staticwebassets/userImages/73404cutemessages.jpg"
-    },
-    {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/85227iconyoga.png",
-      "PackagePath": "staticwebassets/userImages/85227iconyoga.png"
-    },
-    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",
       "PackagePath": "staticwebassets/userImages/93174download.jpg"
-    },
-    {
-      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/939797ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp",
-      "PackagePath": "staticwebassets/userImages/939797ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SnackisApp.Microsoft.AspNetCore.StaticWebAssets.props",

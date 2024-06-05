@@ -8,7 +8,6 @@ using SnackisApp.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
@@ -21,7 +20,6 @@ builder.Services.AddDefaultIdentity<SnackisUser>(options => options.SignIn.Requi
 
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-//builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddControllers(); 
 
@@ -31,11 +29,24 @@ builder.Services.AddControllers();
  // Add HttpClient (API)
 builder.Services.AddHttpClient();
 
-  // Register DiscussionService
     builder.Services.AddScoped<DiscussionService>();
 
-// Register Dailyphilosophers
      builder.Services.AddScoped<DailyphilosopherService>();
+
+
+     builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+});
+
+//Cookies
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+});
+
 
 var app = builder.Build();
 
@@ -74,11 +85,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+//Cookies
+app.UseCookiePolicy();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
-app.MapControllers(); // Ensure this is added to map API controllers
+app.MapControllers();
 
 
 

@@ -30,6 +30,27 @@ h3 {
     margin-bottom: 20px;
 }
 
+h2 {
+    color: #7f6988; 
+    font-weight: 500;
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h5 {
+    color: #7f6988; 
+    font-weight: 200;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-li{
+    list-style-type: none;
+   margin-right: 20px;
+}
+
 .main {
     flex: 1; 
     display: flex;
@@ -37,8 +58,8 @@ h3 {
 p {
     color: #7f6988; 
     font-weight: 300;
-    font-size: 1.5em;
-    text-align: center;
+    font-size: 1.2em;
+    text-align: start;
     margin-bottom: 20px;
 }
 .aside {
@@ -47,15 +68,14 @@ p {
     margin: 10px;
     padding: 20px;
     text-align: center; 
+    align-items: center; 
     border-radius: 10px;
     font-size: large;
-    color:#6b577a; 
     min-height: 500px;
 }
 
 .content {
     flex: 3; 
-
     margin: 10px;
     padding: 20px;
     position: relative; 
@@ -66,13 +86,32 @@ p {
 
 .group-content{
     flex: 3; 
-background-color: #ded9ef;
+background-color: #b5b0c2;
     margin: 10px;
     padding: 20px;
     position: relative; 
     display: flex; 
     flex-direction: column; 
     border-radius: 10px;
+}
+
+.create-section {
+    max-width: 800px;
+    min-width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-section {
+    min-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .seperator{
@@ -135,6 +174,20 @@ background-color: #ded9ef;
     box-shadow: 0 0 5px rgba(127, 105, 136, 0.5);
 }
 
+.form-div{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-direction: column;
+}
+
+.create-form-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .btn-send {
     font-family: 'Open Sans', sans-serif; 
     font-weight: bold;
@@ -171,4 +224,33 @@ background-color: #ded9ef;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manage-groups-btn, .group-btn {
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.manage-groups-btn, .group-btn  {
+    background-color: #7f6988;
+    color: #fff;
+}
+
+.manage-groups-btn, .group-btn:hover {
+    background-color: hsl(273, 17%, 32%);
+    color:#c1b5d0;
+}
+
+.community-img{
+    height: 100px;
+    margin: 10px;
+    vertical-align: middle;
+    border-radius: 10%;
 }

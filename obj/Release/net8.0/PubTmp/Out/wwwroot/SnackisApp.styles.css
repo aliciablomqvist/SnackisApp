@@ -1,0 +1,67 @@
+/* _content/SnackisApp/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+a.navbar-brand[b-gkyf60dowz] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-gkyf60dowz] {
+  color: #5a4377;
+}
+
+.btn-primary[b-gkyf60dowz] {
+  color: #fff;
+  background-color: #413056;
+  border-color: #5a4377;
+}
+
+.nav-pills .nav-link.active[b-gkyf60dowz], .nav-pills .show > .nav-link[b-gkyf60dowz] {
+  color: #fff;
+  background-color: #413056;
+  border-color: #5a4377;
+}
+
+.border-top[b-gkyf60dowz] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-gkyf60dowz] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-gkyf60dowz] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-gkyf60dowz] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-gkyf60dowz] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+
+.nav-profile-image[b-gkyf60dowz] {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 200px;
+}
+
+.nav-icon[b-gkyf60dowz] {
+  font-size: 24px;
+  color: #7f6988; 
+  vertical-align: middle;
+  margin-top: -4px; 
+
+}

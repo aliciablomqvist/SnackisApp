@@ -38,8 +38,8 @@ namespace SnackisApp.Pages
     public async Task<IActionResult> OnGetAsync(int id)
     {
         Post = await _context.Post
-            .Include(p => p.User) // Include user to get the username and profile image
-            .Include(p => p.Reactions) // Include reactions
+            .Include(p => p.User) 
+            .Include(p => p.Reactions) 
             .FirstOrDefaultAsync(m => m.Id == id);
 
         if (Post == null)

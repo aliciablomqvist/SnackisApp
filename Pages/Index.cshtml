@@ -48,20 +48,19 @@
     </div>
 
     <div class="main-content">
-        <h2>Our latest discussions</h2>
+        <h2>Some of our recent discussions</h2>
 
-        @if (Model.Discussions != null && Model.Discussions.Count > 0)
+        @if (Model.RecentDiscussions != null && Model.RecentDiscussions.Count > 0)
         {
             <ul class="discussion-list">
-                @foreach (var discussion in Model.Discussions)
+                @foreach (var discussion in Model.RecentDiscussions)
                 {
                     <li class="discussion-item">
                         <div class="discussion-header">
                             <img src="@discussion.User.ProfileImageUrl" alt="Profile image" class="profile-image" />
                             <div>
-                                <strong><a asp-page="/ViewPost" asp-route-id="@discussion.Id">@discussion.Title </a></strong>
-                                <div class="discussion-meta">by @discussion.User.UserName on @discussion.Date.ToString("g")
-                                </div>
+                                <strong><a asp-page="/ViewPost" asp-route-id="@discussion.Id">@discussion.Title</a></strong>
+                                <div class="discussion-meta">by @discussion.User.UserName on @discussion.Date.ToString("g")</div>
                             </div>
                         </div>
                         <p class="discussion-content">@discussion.Content</p>

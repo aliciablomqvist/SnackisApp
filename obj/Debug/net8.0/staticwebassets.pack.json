@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets/css/profile.css"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/register.css",
+      "PackagePath": "staticwebassets/css/register.css"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/css/reportadmin.css",
       "PackagePath": "staticwebassets/css/reportadmin.css"
     },
@@ -285,8 +289,20 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/22d59546-ce56-4aba-b93f-4d2ddd23cdde_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
+      "PackagePath": "staticwebassets/profileImages/22d59546-ce56-4aba-b93f-4d2ddd23cdde_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/306e9050-44bf-40eb-b155-91baf8e67043_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
       "PackagePath": "staticwebassets/profileImages/306e9050-44bf-40eb-b155-91baf8e67043_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/6467fb4a-90aa-42b6-a240-bd38ef311c39_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
+      "PackagePath": "staticwebassets/profileImages/6467fb4a-90aa-42b6-a240-bd38ef311c39_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/9fb53486-0601-4577-a9cf-9b435dfc8470_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
+      "PackagePath": "staticwebassets/profileImages/9fb53486-0601-4577-a9cf-9b435dfc8470_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/Meditation-Yoga-Logo-7-1-580x348.jpg",
@@ -301,8 +317,20 @@
       "PackagePath": "staticwebassets/profileImages/cute-profile-picture-19mnx03g9yap3dhy.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/default-profile.png",
+      "PackagePath": "staticwebassets/profileImages/default-profile.png"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
       "PackagePath": "staticwebassets/profileImages/depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/f186c0d1-b071-4493-9974-2cb9d7755faa_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
+      "PackagePath": "staticwebassets/profileImages/f186c0d1-b071-4493-9974-2cb9d7755faa_depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/iconyoga.png",
+      "PackagePath": "staticwebassets/profileImages/iconyoga.png"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/profileImages/yogaprofile.png",
@@ -341,8 +369,16 @@
       "PackagePath": "staticwebassets/siteImages/yogaadvert.webp"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/10743cute-profile-picture-19mnx03g9yap3dhy.jpg",
+      "PackagePath": "staticwebassets/userImages/10743cute-profile-picture-19mnx03g9yap3dhy.jpg"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/13335iconyoga.png",
       "PackagePath": "staticwebassets/userImages/13335iconyoga.png"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/20425depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp",
+      "PackagePath": "staticwebassets/userImages/20425depositphotos_76002741-stock-illustration-beautiful-card-with-mandala.webp"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/21227download.jpg",
@@ -357,12 +393,20 @@
       "PackagePath": "staticwebassets/userImages/338download.jpg"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/3813360_F_353694700_lsrADp9I4upIkW4V4Oj2Wwi2Ji6C0jjb.jpg",
+      "PackagePath": "staticwebassets/userImages/3813360_F_353694700_lsrADp9I4upIkW4V4Oj2Wwi2Ji6C0jjb.jpg"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/43536download.jpg",
       "PackagePath": "staticwebassets/userImages/43536download.jpg"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/518387ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp",
       "PackagePath": "staticwebassets/userImages/518387ac24345-1a6b-4a88-8dcd-fdfbf34a9ad6.webp"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/58102ece21b51661577.58f63a7bb30ee.gif",
+      "PackagePath": "staticwebassets/userImages/58102ece21b51661577.58f63a7bb30ee.gif"
     },
     {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/60767download.jpg",
@@ -377,8 +421,20 @@
       "PackagePath": "staticwebassets/userImages/70235yoga-profile.png"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/73314cute-profile-picture-19mnx03g9yap3dhy.jpg",
+      "PackagePath": "staticwebassets/userImages/73314cute-profile-picture-19mnx03g9yap3dhy.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/81261cute-profile-picture-19mnx03g9yap3dhy.jpg",
+      "PackagePath": "staticwebassets/userImages/81261cute-profile-picture-19mnx03g9yap3dhy.jpg"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93174download.jpg",
       "PackagePath": "staticwebassets/userImages/93174download.jpg"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/userImages/93838360_F_353694700_lsrADp9I4upIkW4V4Oj2Wwi2Ji6C0jjb.jpg",
+      "PackagePath": "staticwebassets/userImages/93838360_F_353694700_lsrADp9I4upIkW4V4Oj2Wwi2Ji6C0jjb.jpg"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SnackisApp.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -17,7 +17,8 @@ namespace SnackisApp.Services
 
         public async Task<List<Philosopher>> GetDailyphilosophersAsync()
         {
-            var response = await _httpClient.GetAsync("http://localhost:5003/api/Dailyphilosophers");
+                //Ändra detta till API från Azure
+            var response = await _httpClient.GetAsync("http://localhost:5004/api/Dailyphilosophers");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadFromJsonAsync<List<Philosopher>>();
         }

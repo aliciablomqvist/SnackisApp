@@ -1,0 +1,80 @@
+@page
+@model SnackisApp.Pages.RegisterPageModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+</head>
+
+<p class="row">
+    <p class="col-md-8 mx-auto">
+        <p class="card">
+            <p class="card-header">
+                <h5 class="text-uppercase text-center">User Registration</h5>
+            </p>
+            <p class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <p class="row">
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.Pseudonym"></label>
+                                <input asp-for="Input.Pseudonym" class="form-control" />
+                                <span asp-validation-for="Input.Pseudonym" class="text-danger"></span>
+                            </p>
+                        </p>
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.Bio"></label>
+                                <input asp-for="Input.Bio" class="form-control" />
+                                <span asp-validation-for="Input.Bio" class="text-danger"></span>
+                            </p>
+                        </p>
+                    </p>
+  <p class="row">
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.ProfileImage"></label>
+                                <input asp-for="Input.ProfileImage" class="form-control" type="file" />
+                                <span asp-validation-for="Input.ProfileImage" class="text-danger"></span>
+                            </p>
+                        </p>
+                    <p class="row">
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.PhoneNumber"></label>
+                                <input asp-for="Input.PhoneNumber" class="form-control" />
+                                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                            </p>
+                        </p>
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.Email"></label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </p>
+                        </p>
+                    </p>
+                    <p class="row">
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.Password"></label>
+                                <input asp-for="Input.Password" class="form-control" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </p>
+                        </p>
+                        <p class="col-md-6">
+                            <p class="form-group">
+                                <label asp-for="Input.ConfirmPassword"></label>
+                                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </p>
+                        </p>
+                    </p>
+                    <input type="submit" value="Register" class="btn btn-sm btn-primary text-uppercase rounded-0" />
+                </form>
+            </p>
+        </p>
+    </p>
+</p>

@@ -82,7 +82,6 @@ namespace SnackisApp.Pages.AdminRole
             {
                 await _adminHelper.SaveSubCategory(NewSubCategory);
             }
-
             return RedirectToPage("./AdminCategoryManager");
         }
     }

@@ -4,7 +4,6 @@ using SnackisApp.Data;
 using SnackisApp.Models;
 using System.Linq;
 using System.Threading.Tasks;
-
 public class SeedData
 {
     public static async Task Initialize(ApplicationDbContext context, UserManager<SnackisUser> userManager, RoleManager<IdentityRole> roleManager)
@@ -28,7 +27,6 @@ public class SeedData
         }
         else
         {
-            // Återställ lösenordet till ett känt värde
             var token = await userManager.GeneratePasswordResetTokenAsync(adminUser);
             var resetResult = await userManager.ResetPasswordAsync(adminUser, token, "Admin123!!");
 

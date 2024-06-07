@@ -12,6 +12,7 @@ namespace SnackisApp.Helpers
             _context = context;
         }
 
+        // Save or update a category
         public async Task SaveCategory(Category newCategory)
         {
             var existingCategory = _context.Category.FirstOrDefault(c => c.Id == newCategory.Id);
@@ -27,6 +28,7 @@ namespace SnackisApp.Helpers
             await _context.SaveChangesAsync();
         }
 
+        // Save or update a subcategory
         public async Task SaveSubCategory(SubCategory newSubCategory)
         {
             var existingSubCategory = _context.SubCategory.FirstOrDefault(c => c.Id == newSubCategory.Id);
@@ -43,6 +45,7 @@ namespace SnackisApp.Helpers
             await _context.SaveChangesAsync();
         }
 
+        // Delete a category or subcategory by ID
         public async Task DeleteCategory<T>(int id) where T : class
         {
             var category = await _context.Set<T>().FindAsync(id);

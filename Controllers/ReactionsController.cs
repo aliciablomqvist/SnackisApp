@@ -19,9 +19,11 @@ namespace SnackisApp.Helpers
             _userManager = userManager;
         }
 
+        // POST: Add a new reaction to a post
         [HttpPost]
         public async Task<IActionResult> Post([FromForm] int postId, [FromForm] string reactionType)
         {
+            // Get the current user's Id
             var userId = _userManager.GetUserId(User);
 
             if (userId == null)
@@ -29,6 +31,7 @@ namespace SnackisApp.Helpers
                 return Unauthorized();
             }
 
+            // Creates a new reaction
             var reaction = new Reaction
             {
                 PostId = postId,
@@ -37,6 +40,7 @@ namespace SnackisApp.Helpers
                 CreatedAt = DateTime.Now
             };
 
+            // Adds the reaction to the database
             _context.Reactions.Add(reaction);
             await _context.SaveChangesAsync();
 

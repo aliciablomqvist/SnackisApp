@@ -8,25 +8,27 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using SnackisApp.Data;
 
-
 namespace SnackisApp.Services
 {
     public class DiscussionService
     {
         private readonly HttpClient _httpClient;
-        // private readonly ApplicationDbContext _context;
 
         public DiscussionService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
 
+        // Method to fetch discussions from the API
         public async Task<List<Post>> GetDiscussionsAsync()
         {
-            //Ändra detta till API från Azure
-            var response = await _httpClient.GetAsync("http://localhost:5004/api/Discussions"); // Använd rätt URL till ditt API
+            // Fetch discussions from the local API
+            // var response = await _httpClient.GetAsync("http://localhost:5004/api/Discussions");
+
+            // Fetch discussions from the Azure API
+            var response = await _httpClient.GetAsync("https://mindfulmovementapi.azurewebsites.net/api/Discussions");
+
             response.EnsureSuccessStatusCode();
-            //Innan ändingar
             return await response.Content.ReadFromJsonAsync<List<Post>>();
 
         }

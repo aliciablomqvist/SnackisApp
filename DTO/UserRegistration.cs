@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SnackisApp.DTO
 {
+    // This class serves as a Data Transfer Object (DTO) for my custom user registration
     public class UserRegistration
     {
         [Required]
@@ -12,11 +13,8 @@ namespace SnackisApp.DTO
         [Display(Name = "Bio")]
         public string Bio { get; set; }
 
-       /* [Display(Name = "Profile Image URL")]
-        public string ProfileImageUrl { get; set; }*/
-
-         [Display(Name = "Profile Image")]
-        public IFormFile ProfileImage { get; set; } 
+        [Display(Name = "Profile Image")]
+        public IFormFile ProfileImage { get; set; }
 
         [Required]
         [Phone]

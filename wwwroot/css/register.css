@@ -1,34 +1,31 @@
 body {
-    font-family: 'Open Sans', sans-serif; 
-    background-color: rgba(183, 157, 204, 0.148);
-    color: #7f6988; 
+  font-family: "Open Sans", sans-serif;
+  background-color: rgba(183, 157, 204, 0.148);
+  color: #7f6988;
 }
 
 h2 {
-    color: #7f6988; 
-    font-weight: 300;
-    font-size: 2em;
-    margin-bottom: 20px;
-    display: inline-block;
+  color: #7f6988;
+  font-weight: 300;
+  font-size: 2em;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
-h5{
-    margin-top: 20px;
+h5 {
+  margin-top: 20px;
 }
 
-
-.card-header  {
-
-    background-color: #7f69883b; 
-} 
-
-.btn-primary{
-    background-color: #7f6988; 
-    border: #7f6988;
+.card-header {
+  background-color: #7f69883b;
 }
 
+.btn-primary {
+  background-color: #7f6988;
+  border: #7f6988;
+}
 
-.btn-primary :hover{
-    background-color: #bc9dc8; 
-    border: #bc9dc8; 
+.btn-primary :hover {
+  background-color: #bc9dc8;
+  border: #bc9dc8;
 }

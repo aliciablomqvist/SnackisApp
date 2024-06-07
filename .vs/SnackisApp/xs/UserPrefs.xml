@@ -4,15 +4,18 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Identity/Pages/Account/Manage/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Areas/Identity/Pages/Account/Manage/Index.cshtml" Line="30" Column="2" />
+      <File FileName="Areas/Identity/Pages/Account/Manage/Index.cshtml" />
+      <File FileName="Services/DiscussionService.cs" Line="29" Column="116" />
+      <File FileName="Services/PhilosopherService.cs" Line="24" Column="122" />
+      <File FileName="Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SnackisApp">
-            <Node name="SnackisApp" selected="True">
+            <Node name="SnackisApp">
               <Node name="Areas" expanded="True">
                 <Node name="Identity" expanded="True">
                   <Node name="Pages" expanded="True">
@@ -22,6 +25,8 @@
                   </Node>
                 </Node>
               </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

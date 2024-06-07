@@ -14,14 +14,17 @@ namespace SnackisApp.Services
         {
             _httpClient = httpClient;
         }
-
+        
+        // Method to fetch discussions from the API
         public async Task<List<Philosopher>> GetDailyphilosophersAsync()
         {
-                //Ändra detta till API från Azure
-            var response = await _httpClient.GetAsync("http://localhost:5004/api/Dailyphilosophers");
+            // Fetch discussions from the local API
+            //var response = await _httpClient.GetAsync("http://localhost:5004/api/Dailyphilosophers");
+
+            // Fetch discussions from the Azure API
+            var response = await _httpClient.GetAsync("https://mindfulmovementapi.azurewebsites.net/api/Dailyphilosophers");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadFromJsonAsync<List<Philosopher>>();
         }
     }
 }
-

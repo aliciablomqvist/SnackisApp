@@ -1,141 +1,139 @@
 body {
-    font-family: 'Open Sans', sans-serif; 
-    background-color: rgba(183, 157, 204, 0.148);
-    color: #7f6988; 
-    margin: 0;
-    padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: rgba(183, 157, 204, 0.148);
+  color: #7f6988;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
-    color: #7f6988; 
-    font-weight: 300;
-    font-size: 2em;
-    margin-bottom: 20px;
-    display: inline-block;
+  color: #7f6988;
+  font-weight: 300;
+  font-size: 2em;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .create-post-icon {
-    color: #7f6988;
-    font-size: 1.5em;
-    text-decoration: none;
-    margin-left: 10px;
+  color: #7f6988;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-left: 10px;
 }
 
 .create-post-icon:hover {
-    color: #6b577a; 
+  color: #6b577a;
 }
 
 .subcategory-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 1200px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .subcategory-link {
-    text-decoration: none; 
-    color: inherit; 
+  text-decoration: none;
+  color: inherit;
 }
 
-
-
 .subcategory-item-wrapper {
-    position: relative; /* For positioning the delete icon */
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    margin: 40px 0; /* Vertical margin for spacing between items */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    width: 100%; /* Full width of the container */
-    max-width: 800px; /* Limit the maximum width */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Ensure contents are clipped */
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 40px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .subcategory-item-wrapper:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .delete-post-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #e74c3c;
-    font-size: 1.2em;
-    text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #e74c3c;
+  font-size: 1.2em;
+  text-decoration: none;
 }
 
 .delete-post-icon:hover {
-    color: #c0392b; /* Darker shade for hover */
+  color: #c0392b;
 }
 
 .subcategory-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .profile-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
 }
 
 .subcategory-meta {
-    color: #777777;
+  color: #777777;
 }
 
 .post-image {
-    width: 100%;
-    height: 300px; /* Fixed height for uniform image size */
-    border-bottom: 1px solid #e0e0e0;
-    object-fit: cover;
+  width: 100%;
+  height: 300px;
+  border-bottom: 1px solid #e0e0e0;
+  object-fit: cover;
 }
 
 .post-title {
-    color: #7f6988; /* Consistent title color */
-    font-weight: bold;
-    margin: 10px;
-    font-size: 1.2em;
+  color: #7f6988;
+  font-weight: bold;
+  margin: 10px;
+  font-size: 1.2em;
 }
 
 .subcategory-content {
-    padding: 10px;
-    color: #555555; /* Slightly darker color for content */
-    flex-grow: 1;
+  padding: 10px;
+  color: #555555;
+  flex-grow: 1;
 }
 
 .alert {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .alert ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .footer[b-gkyf60dowz] {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 35px;
-    background-color: #ffffff38;
-  }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 35px;
+  background-color: #ffffff38;
+}

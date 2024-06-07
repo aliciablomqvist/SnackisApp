@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SnackisApp.Models;
 
-
 namespace SnackisApp.Data;
-
 public class ApplicationDbContext : IdentityDbContext<SnackisUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -25,11 +23,11 @@ public class ApplicationDbContext : IdentityDbContext<SnackisUser>
     public DbSet<Reaction> Reactions { get; set; }
 
     public DbSet<Group> Groups { get; set; }
-    
+
     public DbSet<GroupMember> GroupMembers { get; set; }
-    
+
     public DbSet<GroupMessage> GroupMessages { get; set; }
-    
+
     public DbSet<GroupInvitation> GroupInvitations { get; set; }
 
 
@@ -77,25 +75,20 @@ public class ApplicationDbContext : IdentityDbContext<SnackisUser>
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Report>()
-.Property(r => r.Status)
-.HasDefaultValue(ReportStatus.Pending);
-
+            .Property(r => r.Status)
+            .HasDefaultValue(ReportStatus.Pending);
 
         modelBuilder.Entity<Post>()
-                   .HasOne(p => p.User)
-                   .WithMany()
-                   .HasForeignKey(p => p.UserId)
-                   .OnDelete(DeleteBehavior.Cascade);
+            .HasOne(p => p.User)
+            .WithMany()
+            .HasForeignKey(p => p.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-
-                      // Configure composite key for GroupMember
         modelBuilder.Entity<GroupMember>()
             .HasKey(gm => new { gm.GroupId, gm.UserId });
 
-        // Configure composite key for GroupInvitation
         modelBuilder.Entity<GroupInvitation>()
             .HasKey(gi => new { gi.GroupId, gi.InvitedUserId });
-
 
     }
 }

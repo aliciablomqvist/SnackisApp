@@ -21,7 +21,7 @@ namespace SnackisApp.Models
 
         [StringLength(500)]
         public string Reason { get; set; }
- public ReportStatus Status { get; set; }
+        public ReportStatus Status { get; set; }
     }
 
     public enum ReportStatus

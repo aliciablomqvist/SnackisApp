@@ -2,11 +2,14 @@
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/appsettings.Development.json
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/appsettings.json
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Data/snackis.db
+/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Data/snackis.db-shm
+/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Data/snackis.db-wal
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/SnackisApp.dll
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/SnackisApp.deps.json
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/SnackisApp.runtimeconfig.json
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/SnackisApp.pdb
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Humanizer.dll
+/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNet.Identity.Core.dll
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/obj/Release/net8.0/PubTmp/Out/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

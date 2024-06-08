@@ -20,7 +20,7 @@
     <p><strong>Posted by:</strong> @Model.UserName</p>
 </div>
 
-                      
+
 <div class="post-content">
     <form method="post" asp-page-handler="Report" class="report-post-form">
         <input type="hidden" name="postId" value="@Model.Post.Id" />
@@ -59,7 +59,7 @@
 @if (Model.Comments != null && Model.Comments.Count > 0)
 {
     <ul class="comments-list">
-        @foreach (var comment in Model.Comments)
+    @foreach (var comment in Model.Comments)
         {
             @Html.Partial("_CommentPartial", comment)
         }
@@ -80,60 +80,13 @@ else
 @if (!ViewData.ModelState.IsValid)
 {
     <div class="alert alert-danger">
-        <ul>
-            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+    <ul>
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
             {
                 <li>@error.ErrorMessage</li>
             }
         </ul>
     </div>
 }
-
-@section Scripts {
-    <script>
-        $(document).ready(function() {
-            console.log("Document is ready");
-            $('.reply-button').click(function(event) {
-                event.preventDefault();
-                var commentId = $(this).data('comment-id');
-                console.log("Reply button clicked for comment ID:", commentId);
-                $('#ParentCommentId').val(commentId);
-                $('html, body').animate({
-                    scrollTop: $(".add-comment-form").offset().top
-                }, 1000);
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.reaction-button').click(function(event) {
-                event.preventDefault();
-
-                var button = $(this);
-                var postId = button.data('post-id');
-                var reactionType = button.data('reaction');
-
-                $.ajax({
-                    url: '/api/reactions',
-                    method: 'POST',
-                    data: {
-                        postId: postId,
-                        reactionType: reactionType
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            var countSpan = button.find('span');
-                            var currentCount = parseInt(countSpan.text());
-                            countSpan.text(currentCount + 1);
-                        } else {
-                            alert('Failed to add reaction');
-                        }
-                    },
-                    error: function() {
-                        alert('Error adding reaction');
-                    }
-                });
-            });
-        });
-    </script>
-}
+<script src="~/js/comment.js" asp-append-version="true"></script>
+<script src="~/js/reaction.js" asp-append-version="true"></script>

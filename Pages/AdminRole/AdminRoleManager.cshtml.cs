@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SnackisApp.Models; // Inkludera ditt ApplicationUser namespace
+using SnackisApp.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,6 @@ namespace SnackisApp.Pages.AdminRole
         [BindProperty(SupportsGet = true)] public string RoleName { get; set; }
         [BindProperty(SupportsGet = true)] public string AddUserId { get; set; }
         [BindProperty(SupportsGet = true)] public string RemoveUserId { get; set; }
-
         public readonly UserManager<SnackisUser> _userManager;
         public readonly RoleManager<IdentityRole> _roleManager;
 
@@ -24,7 +23,6 @@ namespace SnackisApp.Pages.AdminRole
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
         public async Task OnGetAsync()
         {
             Users = _userManager.Users.ToList();
@@ -47,7 +45,6 @@ namespace SnackisApp.Pages.AdminRole
                 }
             }
         }
-
         public async Task<IActionResult> OnPostAsync()
         {
             if (!string.IsNullOrEmpty(RoleName))
@@ -57,7 +54,6 @@ namespace SnackisApp.Pages.AdminRole
 
             return RedirectToPage("./Index");
         }
-
         public async Task CreateRole(string roleName)
         {
             bool roleExist = await _roleManager.RoleExistsAsync(roleName);

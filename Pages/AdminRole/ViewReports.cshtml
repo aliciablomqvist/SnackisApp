@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "View Reports";
 }
+
 <head>
     <link rel="stylesheet" href="~/css/reportadmin.css" asp-append-version="true" />
 </head>
@@ -20,37 +21,38 @@
         </tr>
     </thead>
     <tbody>
-    @if (Model.Reports != null)
-    {
-        @foreach (var report in Model.Reports)
+        @if (Model.Reports != null)
+        {
+            @foreach (var report in Model.Reports)
+            {
+                <tr>
+                    <td>@report.PostId</td>
+                    <td>@report.ReportedBy.UserName</td> <!-- Null check removed -->
+                    <td>@report.ReportDate</td>
+                    <td>@report.Reason</td>
+                    <td>@report.Status</td>
+                    <td>
+                        @if (report.Status == SnackisApp.Models.ReportStatus.Pending)
+                        {
+                            <div class="button-group">
+                                <form method="post" asp-page-handler="Reject" asp-route-id="@report.Id" class="inline-form">
+                                    <button type="submit" class="btn btn-danger">Reject report</button>
+                                </form>
+                                <form method="post" asp-page-handler="DeletePost" asp-route-postId="@report.PostId"
+                                    class="inline-form">
+                                    <button type="submit" class="btn btn-warning">Approve and Delete</button>
+                                </form>
+                            </div>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
         {
             <tr>
-                <td>@report.PostId</td>
-                <td>@report.ReportedBy.UserName</td> <!-- Null check removed -->
-                <td>@report.ReportDate</td>
-                <td>@report.Reason</td>
-                <td>@report.Status</td>
-                <td>
-                    @if (report.Status == SnackisApp.Models.ReportStatus.Pending)
-                    {
-                        <div class="button-group">
-                            <form method="post" asp-page-handler="Reject" asp-route-id="@report.Id" class="inline-form">
-                                <button type="submit" class="btn btn-danger">Reject report</button>
-                            </form>
-                            <form method="post" asp-page-handler="DeletePost" asp-route-postId="@report.PostId" class="inline-form">
-                                <button type="submit" class="btn btn-warning">Approve and Delete</button>
-                            </form>
-                        </div>
-                    }
-                </td>
+                <td colspan="6">No reports found.</td>
             </tr>
         }
-    }
-    else
-    {
-        <tr>
-            <td colspan="6">No reports found.</td>
-        </tr>
-    }
     </tbody>
 </table>

@@ -10,10 +10,9 @@
 </head>
 
 <body>
-
     <main class="main">
         <aside class="aside">Current users of Mindful Movement
-    
+
             <ul class="admin-list">
                 @foreach (var user in Model.Users)
                 {
@@ -24,26 +23,22 @@
                             <input type="hidden" name="RoleName" value="Admin" />
                             <button type="submit" class="btn btn-success btn-sm"> Add </button>
                         </form>
-                            <form method="get" style="display:inline;">
-                                <input type="hidden" name="RemoveUserId" value="@user.Id" />
-                                <input type="hidden" name="RoleName" value="Admin" />
-                                <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
-                            </form>
-                       
+                        <form method="get" style="display:inline;">
+                            <input type="hidden" name="RemoveUserId" value="@user.Id" />
+                            <input type="hidden" name="RoleName" value="Admin" />
+                            <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
+                        </form>
+
                     </li>
                 }
             </ul>
-            </aside>
-
-
+        </aside>
         <div class="content">
-                <h3>Admin Page</h3>
-<ul class="admin-list">
-	<li><a asp-page="./AdminCategoryManager">Manage Categories</a></li>
-    	<li><a asp-page="./ViewReports">View Reports</a></li>
-</ul>
+            <h3>Admin Page</h3>
+            <ul class="admin-list">
+                <li><a asp-page="./AdminCategoryManager">Manage Categories</a></li>
+                <li><a asp-page="./ViewReports">View Reports</a></li>
+            </ul>
         </div>
-
-
     </main>
 </body>

@@ -17,7 +17,6 @@ namespace SnackisApp.Pages.AdminRole
         {
             _context = context;
         }
-
         public IList<Report> Reports { get; set; }
 
         public async Task OnGetAsync()
@@ -26,16 +25,15 @@ namespace SnackisApp.Pages.AdminRole
                 .Include(r => r.Post)
                 .Include(r => r.ReportedBy)
                 .ToListAsync();
-       
-// Nullcheck
-        foreach (var report in Reports)
-        {
-            if (report.ReportedBy == null)
+
+            foreach (var report in Reports)
             {
-                report.ReportedBy = new SnackisUser { UserName = "Unknown" };
+                if (report.ReportedBy == null)
+                {
+                    report.ReportedBy = new SnackisUser { UserName = "Unknown" };
+                }
             }
         }
-    }
         public async Task<IActionResult> OnPostRejectAsync(int id)
         {
             var report = await _context.Reports.FindAsync(id);
@@ -50,37 +48,32 @@ namespace SnackisApp.Pages.AdminRole
             return RedirectToPage();
         }
 
-       public async Task<IActionResult> OnPostDeletePostAsync(int postId)
-{
-    Console.WriteLine($"Attempting to delete post with ID: {postId}");
+        public async Task<IActionResult> OnPostDeletePostAsync(int postId)
+        {
+            Console.WriteLine($"Attempting to delete post with ID: {postId}");
 
-    var post = await _context.Post
-        .FirstOrDefaultAsync(p => p.Id == postId);
+            var post = await _context.Post
+                .FirstOrDefaultAsync(p => p.Id == postId);
 
-    if (post == null)
-    {
-        Console.WriteLine($"No post found with ID: {postId}");
-        return NotFound();
-    }
+            if (post == null)
+            {
+                Console.WriteLine($"No post found with ID: {postId}");
+                return NotFound();
+            }
 
-    // Log to check post details
-    Console.WriteLine($"Deleting Post ID: {post.Id}, Title: {post.Title}");
+            Console.WriteLine($"Deleting Post ID: {post.Id}, Title: {post.Title}");
 
-  
+            var reports = await _context.Reports.Where(r => r.PostId == postId).ToListAsync();
+            if (reports != null && reports.Any())
+            {
+                _context.Reports.RemoveRange(reports);
+            }
 
-    // Deletes related reports
-    var reports = await _context.Reports.Where(r => r.PostId == postId).ToListAsync();
-    if (reports != null && reports.Any())
-    {
-        _context.Reports.RemoveRange(reports);
-    }
+            _context.Post.Remove(post);
 
-    // Remove the post
-    _context.Post.Remove(post);
+            await _context.SaveChangesAsync();
 
-    await _context.SaveChangesAsync();
-
-    return RedirectToPage();
-}
+            return RedirectToPage();
+        }
     }
 }

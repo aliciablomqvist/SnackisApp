@@ -51,21 +51,17 @@ namespace SnackisApp.Pages
                 return Page();
             }
 
-            // Assigning SenderId and RecipientId
             Message.SenderId = sender.Id;
             Message.RecipientId = RecipientId;
             Message.DateSent = DateTime.Now;
 
-            // Remove validation errors for Sender, Recipient, SenderId, and RecipientId
             ModelState.Remove("Message.Sender");
             ModelState.Remove("Message.Recipient");
             ModelState.Remove("Message.SenderId");
             ModelState.Remove("Message.RecipientId");
 
-            // Validate the model explicitly
             if (!TryValidateModel(Message, nameof(Message)))
             {
-                // Log ModelState errors if any
                 foreach (var state in ModelState)
                 {
                     Console.WriteLine($"{state.Key}: {string.Join(", ", state.Value.Errors.Select(e => e.ErrorMessage))}");
@@ -73,7 +69,6 @@ namespace SnackisApp.Pages
                 return Page();
             }
 
-            // Add Message to context and save
             _context.Message.Add(Message);
             try
             {

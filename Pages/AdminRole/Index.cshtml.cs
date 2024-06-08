@@ -12,78 +12,77 @@ using System.Threading.Tasks;
 namespace SnackisApp.Pages.AdminRole
 {
     [Authorize(Roles = "Admin")]
-   public class AdminPageModel : PageModel
-{
-    public List<SnackisUser> Users { get; set; }
-    public Dictionary<string, IList<string>> UserRoles { get; set; }
-    public List<IdentityRole> Roles { get; set; }
-
-    [BindProperty(SupportsGet = true)] public string RoleName { get; set; }
-    [BindProperty(SupportsGet = true)] public string AddUserId { get; set; }
-    [BindProperty(SupportsGet = true)] public string RemoveUserId { get; set; }
-
-    public readonly UserManager<SnackisUser> _userManager;
-    public readonly RoleManager<IdentityRole> _roleManager;
-
-    public AdminPageModel(RoleManager<IdentityRole> roleManager, UserManager<SnackisUser> userManager)
+    public class AdminPageModel : PageModel
     {
-        _userManager = userManager;
-        _roleManager = roleManager;
-        UserRoles = new Dictionary<string, IList<string>>();
-    }
+        public List<SnackisUser> Users { get; set; }
+        public Dictionary<string, IList<string>> UserRoles { get; set; }
+        public List<IdentityRole> Roles { get; set; }
 
-    public async Task OnGetAsync()
-    {
-        Users = _userManager.Users.ToList();
-        Roles = _roleManager.Roles.OrderByDescending(x => x.Id).ToList();
+        [BindProperty(SupportsGet = true)] public string RoleName { get; set; }
+        [BindProperty(SupportsGet = true)] public string AddUserId { get; set; }
+        [BindProperty(SupportsGet = true)] public string RemoveUserId { get; set; }
 
-        foreach (var user in Users)
+        public readonly UserManager<SnackisUser> _userManager;
+        public readonly RoleManager<IdentityRole> _roleManager;
+
+        public AdminPageModel(RoleManager<IdentityRole> roleManager, UserManager<SnackisUser> userManager)
         {
-            var roles = await _userManager.GetRolesAsync(user);
-            UserRoles[user.Id] = roles;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            UserRoles = new Dictionary<string, IList<string>>();
         }
 
-        if (AddUserId != null)
+        public async Task OnGetAsync()
         {
-            var alterUser = await _userManager.FindByIdAsync(AddUserId);
-            if (alterUser != null && !string.IsNullOrEmpty(RoleName))
+            Users = _userManager.Users.ToList();
+            Roles = _roleManager.Roles.OrderByDescending(x => x.Id).ToList();
+
+            foreach (var user in Users)
             {
-                await _userManager.AddToRoleAsync(alterUser, RoleName);
+                var roles = await _userManager.GetRolesAsync(user);
+                UserRoles[user.Id] = roles;
+            }
+
+            if (AddUserId != null)
+            {
+                var alterUser = await _userManager.FindByIdAsync(AddUserId);
+                if (alterUser != null && !string.IsNullOrEmpty(RoleName))
+                {
+                    await _userManager.AddToRoleAsync(alterUser, RoleName);
+                }
+            }
+            if (RemoveUserId != null)
+            {
+                var alterUser = await _userManager.FindByIdAsync(RemoveUserId);
+                if (alterUser != null && !string.IsNullOrEmpty(RoleName))
+                {
+                    await _userManager.RemoveFromRoleAsync(alterUser, RoleName);
+                }
             }
         }
-        if (RemoveUserId != null)
+        public async Task<IActionResult> OnPostAsync()
         {
-            var alterUser = await _userManager.FindByIdAsync(RemoveUserId);
-            if (alterUser != null && !string.IsNullOrEmpty(RoleName))
+            if (!string.IsNullOrEmpty(RoleName))
             {
-                await _userManager.RemoveFromRoleAsync(alterUser, RoleName);
+                await CreateRole(RoleName);
+            }
+
+            return RedirectToPage("./Index");
+        }
+
+        public async Task CreateRole(string roleName)
+        {
+            bool roleExist = await _roleManager.RoleExistsAsync(roleName);
+
+            if (!roleExist)
+            {
+                var role = new IdentityRole
+                {
+                    Name = roleName,
+                };
+
+                await _roleManager.CreateAsync(role);
             }
         }
     }
-
-    public async Task<IActionResult> OnPostAsync()
-    {
-        if (!string.IsNullOrEmpty(RoleName))
-        {
-            await CreateRole(RoleName);
-        }
-
-        return RedirectToPage("./Index");
-    }
-
-    public async Task CreateRole(string roleName)
-    {
-        bool roleExist = await _roleManager.RoleExistsAsync(roleName);
-
-        if (!roleExist)
-        {
-            var role = new IdentityRole
-            {
-                Name = roleName,
-            };
-
-            await _roleManager.CreateAsync(role);
-        }
-    }
-}
 }

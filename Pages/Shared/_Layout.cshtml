@@ -12,6 +12,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,18 +20,20 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SnackisApp.styles.css" asp-append-version="true" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                <img src="/siteImages/lotuslogo.jpg" alt="Lotus logo" style="height: 30px; margin-right: 10px; vertical-align: middle;">
-                Mindful Movement
-            </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src="/siteImages/lotuslogo.jpg" alt="Lotus logo"
+                        style="height: 30px; margin-right: 10px; vertical-align: middle;">
+                    Mindful Movement
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -38,15 +41,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-           
 
-                       @{
+
+                        @{
                             try
                             {
                                 var categories = _context.Category
-                                    .Include(c => c.SubCategory)
-                                    .AsNoTracking()
-                                    .ToList();
+                                .Include(c => c.SubCategory)
+                                .AsNoTracking()
+                                .ToList();
 
                                 Console.WriteLine($"Found {categories.Count} categories."); // Log number of categories
 
@@ -61,13 +64,15 @@
                                     foreach (var category in categories)
                                     {
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
                                                 @category.Name
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 @foreach (var subCategory in category.SubCategory)
                                                 {
-                                                    <li><a class="dropdown-item" asp-area="" asp-page="/SubCategory" asp-route-id="@subCategory.Id">@subCategory.Name</a></li>
+                                                    <li><a class="dropdown-item" asp-area="" asp-page="/SubCategory"
+                                                            asp-route-id="@subCategory.Id">@subCategory.Name</a></li>
                                                 }
                                             </ul>
                                         </li>
@@ -79,37 +84,38 @@
                                 Console.WriteLine($"Error fetching categories: {ex.Message}");
                             }
 
-                                                @if (User.IsInRole("Admin"))
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-page="/AdminRole/Index">
-            <i class="fas fa-user-shield"></i> 
-        </a>
-    </li>
-}
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-page="/AdminRole/Index">
+                                        <i class="fas fa-user-shield"></i>
+                                    </a>
+                                </li>
+                            }
 
-                        @if (SignInManager.IsSignedIn(User))
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Messages">
-                                <i class="fas fa-envelope nav-icon"></i>
-                            </a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/UserInfo" asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">
-                                @if (!string.IsNullOrEmpty(user?.ProfileImageUrl))
-                                {
-                                    <img src="@user.ProfileImageUrl" alt="Profile image" class="nav-profile-image" />
-                                }
-                                else
-                                {
-                                    <span>Profile</span>
-                                }
-                            </a>
-                        </li>
-                    }
-                    }
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Messages">
+                                        <i class="fas fa-envelope nav-icon"></i>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/UserInfo"
+                                        asp-route-userId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">
+                                        @if (!string.IsNullOrEmpty(user?.ProfileImageUrl))
+                                        {
+                                            <img src="@user.ProfileImageUrl" alt="Profile image" class="nav-profile-image" />
+                                        }
+                                        else
+                                        {
+                                            <span>Profile</span>
+                                        }
+                                    </a>
+                                </li>
+                            }
+                        }
                     </ul>
 
                     <partial name="_LoginPartial" />
@@ -126,11 +132,11 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - Mindful Movement - <a asp-area="" asp-page="/Privacy">Privacy</a>
-            
+
         </div>
     </footer>
 
-                          <div class="container">
+    <div class="container">
         <partial name="_CookiesConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
@@ -143,4 +149,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

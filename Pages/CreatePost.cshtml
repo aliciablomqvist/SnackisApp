@@ -17,7 +17,7 @@
 </div>
 
 <div class="row create-post-form-container">
-    @if(SignInManager.IsSignedIn(User))
+    @if (SignInManager.IsSignedIn(User))
     {
         <form method="post" enctype="multipart/form-data" class="create-post-form">
             <div class="form-group">
@@ -30,11 +30,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Post.CategoryId"> Choose Category</label>
-                <select asp-for="Post.CategoryId" class="form-control" asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["Categories"], "Value", "Text"))"></select>
+                <select asp-for="Post.CategoryId" class="form-control"
+                    asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["Categories"], "Value", "Text"))"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Post.SubCategoryId">Choose Subcategory</label>
-                <select asp-for="Post.SubCategoryId" class="form-control" asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["SubCategories"], "Value", "Text"))"></select>
+                <select asp-for="Post.SubCategoryId" class="form-control"
+                    asp-items="@(new SelectList((System.Collections.IEnumerable)ViewData["SubCategories"], "Value", "Text"))"></select>
             </div>
             <div class="form-group">
                 <label asp-for="UploadedImage">Upload an image</label>
@@ -51,10 +53,10 @@
     {
         <div class="alert alert-danger">
             <ul>
-            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-            {
-                <li>@error.ErrorMessage</li>
-            }
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
             </ul>
         </div>
     }

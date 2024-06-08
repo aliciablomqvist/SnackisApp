@@ -73,7 +73,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// Use cookie policy
 app.UseCookiePolicy();
 
 app.MapControllerRoute(

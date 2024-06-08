@@ -13,51 +13,45 @@
     <link rel="stylesheet" href="~/css/indexadmin.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-
     <main class="main">
-       @if (SignInManager.IsSignedIn(User))
-{
-    <aside class="aside">
-        <p>Current users</p>
-
-        <ul class="admin-list">
-            @foreach (var user in Model.Users)
-            {
-                <li class="admin-aside-content">
-                    @user.UserName
-
-                    @if (Model.UserRoles[user.Id].Contains("Admin"))
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <aside class="aside">
+                <p>Current users</p>
+                <ul class="admin-list">
+                    @foreach (var user in Model.Users)
                     {
-                        <form method="get" style="display:inline;">
-                            <input type="hidden" name="RemoveUserId" value="@user.Id" />
-                            <input type="hidden" name="RoleName" value="Admin" />
-                            <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
-                        </form>
-                    }
-                    else
-                    {
-                        <form method="get" style="display:inline;">
-                            <input type="hidden" name="AddUserId" value="@user.Id" />
-                            <input type="hidden" name="RoleName" value="Admin" />
-                            <button type="submit" class="btn btn-success btn-sm"> Add </button>
-                        </form>
-                    }
-                </li>
-            }
-        </ul>
-    </aside>
-}
+                        <li class="admin-aside-content">
+                            @user.UserName
 
+                            @if (Model.UserRoles[user.Id].Contains("Admin"))
+                            {
+                                <form method="get" style="display:inline;">
+                                    <input type="hidden" name="RemoveUserId" value="@user.Id" />
+                                    <input type="hidden" name="RoleName" value="Admin" />
+                                    <button type="submit" class="btn btn-danger btn-sm"> Remove </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <form method="get" style="display:inline;">
+                                    <input type="hidden" name="AddUserId" value="@user.Id" />
+                                    <input type="hidden" name="RoleName" value="Admin" />
+                                    <button type="submit" class="btn btn-success btn-sm"> Add </button>
+                                </form>
+                            }
+                        </li>
+                    }
+                </ul>
+            </aside>
+        }
         <div class="content">
-                <h3>Admin Page</h3>
-<ul class="admin-list">
-	<li><a asp-page="./AdminCategoryManager">Manage Categories</a></li>
-    	<li><a asp-page="./ViewReports">View Reports</a></li>
-</ul>
+            <h3>Admin Page</h3>
+            <ul class="admin-list">
+                <li><a asp-page="./AdminCategoryManager">Manage Categories</a></li>
+                <li><a asp-page="./ViewReports">View Reports</a></li>
+            </ul>
         </div>
-
-
     </main>
 </body>

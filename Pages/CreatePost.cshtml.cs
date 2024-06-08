@@ -52,7 +52,6 @@ namespace SnackisApp.Pages
 
             Posts = await _context.Post.ToListAsync();
         }
-
         public async Task<IActionResult> OnPostAsync()
         {
             var image = UploadedImage;
@@ -73,7 +72,6 @@ namespace SnackisApp.Pages
             Post.Image = fileName;
             Post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            // Kontrollera att CategoryId och SubCategoryId finns i respektive tabell
             var categoryExists = await _context.Category.AnyAsync(c => c.Id == Post.CategoryId);
             var subCategoryExists = await _context.SubCategory.AnyAsync(sc => sc.Id == Post.SubCategoryId);
 

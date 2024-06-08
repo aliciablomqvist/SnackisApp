@@ -28,7 +28,6 @@ namespace SnackisApp.Pages
 
             return Page();
         }
-
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

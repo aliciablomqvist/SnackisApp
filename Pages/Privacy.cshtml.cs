@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SnackisApp.Pages;
-
 public class PrivacyModel : PageModel
 {
     private readonly ILogger<PrivacyModel> _logger;
@@ -16,4 +15,3 @@ public class PrivacyModel : PageModel
     {
     }
 }
-

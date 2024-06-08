@@ -33,7 +33,7 @@ namespace SnackisApp.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Correct usage
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             UserEntity = await _userManager.FindByIdAsync(userId);
 
             if (UserEntity == null)
@@ -52,7 +52,7 @@ namespace SnackisApp.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Correct usage
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             UserEntity = await _userManager.FindByIdAsync(userId);
 
             if (UserEntity == null)

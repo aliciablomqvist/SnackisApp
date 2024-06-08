@@ -57,6 +57,22 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/js/comment.js",
+      "PackagePath": "staticwebassets/js/comment.js"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/js/cookies.js",
+      "PackagePath": "staticwebassets/js/cookies.js"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/js/messages.js",
+      "PackagePath": "staticwebassets/js/messages.js"
+    },
+    {
+      "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/js/reaction.js",
+      "PackagePath": "staticwebassets/js/reaction.js"
+    },
+    {
       "Id": "/Users/jack.blomqvist/Desktop/SnackisProject/SnackisApp/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

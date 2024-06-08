@@ -8,27 +8,28 @@
     ViewData["Title"] = "Messages";
     var user = await UserManager.GetUserAsync(User);
 }
+
 <head>
     <link rel="stylesheet" href="~/css/messages.css" asp-append-version="true" />
 </head>
-
+<body>
 @if (SignInManager.IsSignedIn(User))
 {
     <h2>Messages</h2>
 
     <div class="message-actions">
-        <a asp-page="/SendMessage" class="message-btn">Write a New Message</a>
-    </div>
+    <a asp-page="/SendMessage" class="message-btn">Write a New Message</a>
+</div>
 
     <div class="message-nav">
-        <button id="inboxBtn" class="btn btn-inbox">Inbox</button>
-        <button id="sentBtn" class="btn btn-sent">Sent</button>
-    </div>
+    <button id="inboxBtn" class="btn btn-inbox">Inbox</button>
+    <button id="sentBtn" class="btn btn-sent">Sent</button>
+</div>
 
     <div id="inboxSection">
-        <h3>Inbox</h3>
+    <h3>Inbox</h3>
 
-        @if (Model.ReceivedMessages != null && Model.ReceivedMessages.Count > 0)
+    @if (Model.ReceivedMessages != null && Model.ReceivedMessages.Count > 0)
         {
             <ul class="message-list">
                 @foreach (var message in Model.ReceivedMessages)
@@ -50,9 +51,9 @@
     </div>
 
     <div id="sentSection" style="display:none;">
-        <h3>Sent</h3>
+    <h3>Sent</h3>
 
-        @if (Model.SentMessages != null && Model.SentMessages.Count > 0)
+    @if (Model.SentMessages != null && Model.SentMessages.Count > 0)
         {
             <ul class="message-list">
                 @foreach (var message in Model.SentMessages)
@@ -73,30 +74,5 @@
         }
     </div>
 }
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const inboxBtn = document.getElementById('inboxBtn');
-        const sentBtn = document.getElementById('sentBtn');
-        const inboxSection = document.getElementById('inboxSection');
-        const sentSection = document.getElementById('sentSection');
-
-        inboxBtn.addEventListener('click', function () {
-            inboxSection.style.display = 'block';
-            sentSection.style.display = 'none';
-            inboxBtn.classList.add('btn-inbox');
-            inboxBtn.classList.remove('btn-sent');
-            sentBtn.classList.add('btn-sent');
-            sentBtn.classList.remove('btn-inbox');
-        });
-
-        sentBtn.addEventListener('click', function () {
-            inboxSection.style.display = 'none';
-            sentSection.style.display = 'block';
-            sentBtn.classList.add('btn-inbox');
-            sentBtn.classList.remove('btn-sent');
-            inboxBtn.classList.add('btn-sent');
-            inboxBtn.classList.remove('btn-inbox');
-        });
-    });
-</script>
+        <script src="~/js/messages.js" asp-append-version="true"></script>
+        </body>

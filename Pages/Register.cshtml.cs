@@ -29,7 +29,7 @@ namespace SnackisApp.Pages
         {
         }
 
-         public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace SnackisApp.Pages
                 }
                 else
                 {
-                    // Use a default image if none is provided
+
                     uniqueFileName = "default-profile.png";
                 }
                 var user = new SnackisUser

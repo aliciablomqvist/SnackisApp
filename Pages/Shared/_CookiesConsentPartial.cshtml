@@ -1,29 +1,24 @@
 @using Microsoft.AspNetCore.Http.Features
+
 <head>
     <link rel="stylesheet" href="~/css/cookies.css" asp-append-version="true" />
 </head>
 
-@{
-    var consentFeatureFlag = Context.Features.Get<ITrackingConsentFeature>();
-    var showBannerFlag = !consentFeatureFlag?.CanTrack ?? false;
-    var cookieStr = consentFeatureFlag?.CreateConsentCookie();
-}
+<body>
+    @{
+        var consentFeatureFlag = Context.Features.Get<ITrackingConsentFeature>();
+        var showBannerFlag = !consentFeatureFlag?.CanTrack ?? false;
+        var cookieStr = consentFeatureFlag?.CreateConsentCookie();
+    }
 
+    @if (showBannerFlag)
+    {
+        <div id="cookieConsentdiv">
+            <h3 class="display-6">Want a cookie?</h3>
+            <img src="~/siteImages/cookie.png" alt="Accept" data-cookie-string="@cookieStr" style="cursor: pointer;" />
+            <p>READ MORE ABOUT OUR <a asp-page="/CookiesPolicy">COOKIE POLICY</a> HERE.</p>
+        </div>
+        <script src="~/js/messages.js" asp-append-version="true"></script>
 
-@if (showBannerFlag)
-{
-  <div id="cookieConsentdiv">
-        <h3 class="display-6">Want a cookie?</h3>
-        <img src="~/siteImages/cookie.png" alt="Accept" data-cookie-string="@cookieStr" style="cursor: pointer;" />
-        <p>READ MORE ABOUT OUR <a asp-page="/CookiesPolicy">COOKIE POLICY</a> HERE.</p>
-    </div>
-
-<script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector("#cookieConsentdiv img[data-cookie-string]").addEventListener('click', function () {
-                document.cookie = this.getAttribute("data-cookie-string");
-                document.querySelector("#cookieConsentdiv").style.display = 'none';
-            });
-        });
-    </script>
-}
+    }
+</body>

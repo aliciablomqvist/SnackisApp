@@ -1,30 +1,26 @@
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using SnackisApp.Models; // Kontrollera att namnrymden är korrekt
+using SnackisApp.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace SnackisApp.Services
 {
-    public class DailyphilosopherService
-    {
-        private readonly HttpClient _httpClient;
+	public class DailyphilosopherService
+	{
+		private readonly HttpClient _httpClient;
+		private readonly IConfiguration _config;
 
-        public DailyphilosopherService(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
-        
-        // Method to fetch discussions from the API
-        public async Task<List<Philosopher>> GetDailyphilosophersAsync()
-        {
-            // Fetch discussions from the local API
-            //var response = await _httpClient.GetAsync("http://localhost:5004/api/Dailyphilosophers");
+		public DailyphilosopherService(HttpClient httpClient, IConfiguration config)
+		{
+			_httpClient = httpClient;
+			_config = config;
+		}
 
-            // Fetch discussions from the Azure API
-            var response = await _httpClient.GetAsync("https://mindfulmovementapi.azurewebsites.net/api/Dailyphilosophers");
-            response.EnsureSuccessStatusCode();
-            return await response.Content.ReadFromJsonAsync<List<Philosopher>>();
-        }
-    }
+		public async Task<List<Philosopher>> GetDailyphilosophersAsync()
+		{
+			var baseUrl = _config["ApiBaseUrl"];
+			var response = await _httpClient.GetAsync($"{baseUrl}/api/Dailyphilosophers");
+
+			response.EnsureSuccessStatusCode();
+			return await response.Content.ReadFromJsonAsync<List<Philosopher>>();
+		}
+	}
 }

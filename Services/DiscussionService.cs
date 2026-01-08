@@ -1,36 +1,27 @@
-using System.Collections.Generic;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+
 using SnackisApp.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using SnackisApp.Data;
+using Microsoft.Extensions.Configuration;
 
 namespace SnackisApp.Services
 {
-    public class DiscussionService
-    {
-        private readonly HttpClient _httpClient;
+	public class DiscussionService
+	{
+		private readonly HttpClient _httpClient;
+		private readonly IConfiguration _config;
 
-        public DiscussionService(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
+		public DiscussionService(HttpClient httpClient, IConfiguration config)
+		{
+			_httpClient = httpClient;
+			_config = config;
+		}
 
-        // Method to fetch discussions from the API
-        public async Task<List<Post>> GetDiscussionsAsync()
-        {
-            // Fetch discussions from the local API
-            // var response = await _httpClient.GetAsync("http://localhost:5004/api/Discussions");
+		public async Task<List<Post>> GetDiscussionsAsync()
+		{
+			var baseUrl = _config["ApiBaseUrl"];
+			var response = await _httpClient.GetAsync($"{baseUrl}/api/Discussions");
 
-            // Fetch discussions from the Azure API
-            var response = await _httpClient.GetAsync("https://mindfulmovementapi.azurewebsites.net/api/Discussions");
-
-            response.EnsureSuccessStatusCode();
-            return await response.Content.ReadFromJsonAsync<List<Post>>();
-
-        }
-    }
+			response.EnsureSuccessStatusCode();
+			return await response.Content.ReadFromJsonAsync<List<Post>>();
+		}
+	}
 }
